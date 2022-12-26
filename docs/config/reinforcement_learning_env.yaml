@@ -1,0 +1,20 @@
+name: reinforcement_learning
+channels:
+  - apple
+  - conda-forge
+dependencies:
+  - python=3  ## specify desired version
+  - pip
+  - tensorflow-deps
+  - ipykernel  ## for use with Jupyter
+
+  ## PyPI packages
+  - pip:
+    - tensorflow-macos
+    - tensorflow-metal  ## optional, but recommended
+    - torch ## if you want to use pytorch as well
+    - torchvision ## if you want to use pytorch as well
+    - matplotlib ## if you want to plot your data
+    - plotly ## if you want to plot your data
+    - pandas
+    - numpy
