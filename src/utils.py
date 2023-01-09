@@ -2,6 +2,7 @@ import tensorflow as tf
 from keras.layers import Dense
 from keras import Model
 from dm_control import suite
+from dm_control.rl import control
 import numpy as np
 from typing import List, Tuple
 
@@ -9,7 +10,7 @@ def print_log(text: str, **kwargs): print(f"[ log ] {text}",**kwargs)
 def print_error(text: str, **kwargs): print(f"[ error ] {text}",**kwargs)
 
 # Define the actor model.
-def actor_model(env: suite.Environment):
+def actor_model(env: control.Environment):
     inputs = tf.keras.Input(shape=(env.observation_spec().shape[0],))
     x = Dense(32, activation='relu')(inputs)
     x = Dense(32, activation='relu')(x)
@@ -19,7 +20,7 @@ def actor_model(env: suite.Environment):
     return model
 
 # Define the critic model.
-def critic_model(env: suite.Environment):
+def critic_model(env: control.Environment):
     inputs = tf.keras.Input(shape=(env.observation_spec().shape[0],))
     x = Dense(32, activation='relu')(inputs)
     x = Dense(32, activation='relu')(x)
