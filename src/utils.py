@@ -3,6 +3,7 @@ from keras.layers import Dense
 from keras import Model
 from dm_control import suite
 from dm_control.rl import control
+import dm_env
 import numpy as np
 from typing import List, Tuple
 
@@ -30,7 +31,7 @@ def critic_model(env: control.Environment):
     return model
 
 # Preprocess the data.
-def preprocess_data(episodes: List[List[Tuple[suite.TimeStep, np.ndarray, suite.TimeStep]]]):
+def preprocess_data(episodes: List[List[Tuple[dm_env.TimeStep, np.ndarray, dm_env.TimeStep]]]):
     """
     This function takes a list of episodes, where each episode is a list of time steps. 
     It iterates over the episodes and time steps, and extracts the observations, actions, rewards, and next observations for each time step. 
