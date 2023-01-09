@@ -2,16 +2,12 @@ import tensorflow as tf
 
 class SACAgent:
     """
-    Soft Actor-Critic agent.
-
-    __init__: Initializes the agent with the actor and critic models, as well as the target actor and critic models that are used for online learning. It also creates an empty replay buffer to store data for training.
-    train_step: 
-    update_targets: 
-
+    Soft Actor-Critic agent
     """
     def __init__(self, actor, critic):
         """
-        Initializes the agent with the actor and critic models, as well as the target actor and critic models that are used for online learning. It also creates an empty replay buffer to store data for training.
+        Initializes the agent with the actor and critic models, as well as the target actor and critic models that are used for online learning. 
+        It also creates an empty replay buffer to store data for training.
         """
         self.critic = critic
         self.target_actor = tf.keras.models.clone_model(actor)
@@ -25,7 +21,8 @@ class SACAgent:
 
     def select_action(self, time_step):
         """
-        Selects an action for the environment based on the current state. It uses the actor model to compute the action logits and then samples from the categorical distribution defined by these logits.
+        Selects an action for the environment based on the current state. 
+        It uses the actor model to compute the action logits and then samples from the categorical distribution defined by these logits.
         """
         observation = time_step.observation
         logits = self.actor(observation[None, :])
