@@ -10,6 +10,7 @@ class SACAgent:
         Initializes the agent with the actor and critic models, as well as the target actor and critic models that are used for online learning. 
         It also creates an empty replay buffer to store data for training.
         """
+        self.actor = actor
         self.critic = critic
         self.target_actor = tf.keras.models.clone_model(actor)
         self.target_actor.set_weights(actor.get_weights())
