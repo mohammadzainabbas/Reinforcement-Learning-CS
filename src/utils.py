@@ -1,7 +1,6 @@
 import tensorflow as tf
 from keras.layers import Dense
 from keras import Model
-from dm_control import suite
 from dm_control.rl import control
 import dm_env
 import numpy as np
