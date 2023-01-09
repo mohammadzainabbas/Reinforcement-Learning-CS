@@ -18,8 +18,8 @@ env = dm_control.suite.load(
     'manipulator', 'insert_ball', task_kwargs=dict(target_size='large'))
 
 # Create the actor and critic models.
-actor = Actor_model()
-critic = critic_model()
+actor = actor_model(env=env)
+critic = critic_model(env=env)
 
 # Create the SAC agent.
 agent = SACAgent(actor, critic)
