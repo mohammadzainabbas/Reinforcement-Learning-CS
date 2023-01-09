@@ -2,6 +2,7 @@ import tensorflow as tf
 from keras.layers import Dense
 from keras import Model
 from dm_control import suite
+import numpy as np
 
 # Define the actor model.
 def actor_model(env: suite.Environment):
