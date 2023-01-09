@@ -60,8 +60,7 @@ for epoch in range(1000):
         episodes.append(episode)
 
     # Preprocess the data.
-    trajectories = rl_sac.preprocess_data(episodes)
-    observations, actions, rewards, next_observations, dones = trajectories
+    observations, actions, rewards, next_observations, dones = preprocess_data(episodes)
 
     # Update the agent.
     agent.train_step(observations, actions, rewards, next_observations, dones, optimizer)
