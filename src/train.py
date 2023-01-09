@@ -1,12 +1,12 @@
+from typing import Tuple
 import dm_control
 import numpy as np
-from typing import Tuple
 import tensorflow as tf
 
 from sac import SACAgent
 from utils import actor_model, critic_model, preprocess_data, print_log
 
-def train_sac() -> SACAgent:
+def train_sac() -> Tuple[SACAgent,  tf.keras.Model]:
     # Defaults
     SEED = 42
     EPOCHS = 1000
