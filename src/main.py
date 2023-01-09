@@ -10,8 +10,9 @@ from sac import SACAgent
 from utils import actor_model, critic_model
 
 # Set the random seed for reproducibility.
-np.random.seed(42)
-tf.random.set_seed(42)
+SEED = 42
+np.random.seed(SEED)
+tf.random.set_seed(SEED)
 
 # Load the `manipulator` environment.
 env = dm_control.suite.load(
