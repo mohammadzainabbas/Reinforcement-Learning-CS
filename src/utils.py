@@ -5,6 +5,9 @@ from dm_control import suite
 import numpy as np
 from typing import List, Tuple
 
+def print_log(text: str, epoch: int, episode: int, reward: float):
+    print(f'Epoch: {epoch}, Episode: {episode}, Reward: {reward} - {text}')
+
 # Define the actor model.
 def actor_model(env: suite.Environment):
     inputs = tf.keras.Input(shape=(env.observation_spec().shape[0],))
