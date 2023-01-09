@@ -84,18 +84,18 @@ class SACAgent:
 
             # Update the target networks.
             self.update_targets()
-
-        def update_targets(self):
-            """
-            Updates the target actor and critic models using a soft update rule with a weight of tau.
-            """
-            actor_weights = self.actor.get_weights()
-            target_actor_weights = self.target_actor.get_weights()
-            for i in range(len(actor_weights)):
-                target_actor_weights[i] = self.tau * actor_weights[i] + (1 - self.tau) * target_actor_weights[i]
-            self.target_actor.set_weights(target_actor_weights)
-            critic_weights = self.critic.get_weights()
-            target_critic_weights = self.target_critic.get_weights()
-            for i in range(len(critic_weights)):
-                target_critic_weights[i] = self.tau * critic_weights[i] + (1 - self.tau) * target_critic_weights[i]
-            self.target_critic.set_weights(target_critic_weights)
+            
+    def update_targets(self):
+        """
+        Updates the target actor and critic models using a soft update rule with a weight of tau.
+        """
+        actor_weights = self.actor.get_weights()
+        target_actor_weights = self.target_actor.get_weights()
+        for i in range(len(actor_weights)):
+            target_actor_weights[i] = self.tau * actor_weights[i] + (1 - self.tau) * target_actor_weights[i]
+        self.target_actor.set_weights(target_actor_weights)
+        critic_weights = self.critic.get_weights()
+        target_critic_weights = self.target_critic.get_weights()
+        for i in range(len(critic_weights)):
+            target_critic_weights[i] = self.tau * critic_weights[i] + (1 - self.tau) * target_critic_weights[i]
+        self.target_critic.set_weights(target_critic_weights)
