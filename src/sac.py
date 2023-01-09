@@ -50,4 +50,31 @@ class SACAgent:
             target_q_values -= self.target_entropy * tf.exp(logits)
             target_q_values = rewards + (1 - dones) * self.discount_factor * target_q_values
             critic_loss = tf.reduce_mean((q_values - target_q_values) ** 2)
-            
+            # Update the critic.
+            critic_gradients = tape.gradient(critic_loss, self.critic.trainable_variables)
+            optimizer.apply_gradients(zip(critic_gradients, self.critic.trainable_variables))
+
+            # Compute the actor loss.
+            with tf.GradientTape() as tape:
+                logits = self.actor(observations)
+                actor_loss = -tf.reduce_mean(self.critic(observations, self.actor(observations)))
+                actor_loss -= self.target_entropy * tf.reduce_mean(tf.exp(logits))
+
+            # Update the actor.
+            actor_gradients = tape.gradient(actor_loss, self.actor.trainable_variables)
+            optimizer.apply_gradients(zip(actor_gradients, self.actor.trainable_variables))
+
+            # Update the target networks.
+            self.update_targets()
+
+        def update_targets(self):
+            actor_weights = self.actor.get_weights()
+            target_actor_weights = self.target_actor.get_weights()
+            for i in range(len(actor_weights)):
+                target_actor_weights[i] = self.tau * actor_weights[i] + (1 - self.tau) * target_actor_weights[i]
+            self.target_actor.set_weights(target_actor_weights)
+            critic_weights = self.critic.get_weights()
+            target_critic_weights = self.target_critic.get_weights()
+            for i in range(len(critic_weights)):
+                target_critic_weights[i] = self.tau * critic_weights[i] + (1 - self.tau) * target_critic_weights[i]
+            self.target_critic.set_weights(target_critic_weights)
