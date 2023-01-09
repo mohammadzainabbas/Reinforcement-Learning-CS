@@ -3,7 +3,7 @@ from keras.layers import Dense
 from keras import Model
 from dm_control import suite
 import numpy as np
-from typing import List, Union
+from typing import List, Tuple
 
 # Define the actor model.
 def actor_model(env: suite.Environment):
@@ -26,7 +26,7 @@ def critic_model(env: suite.Environment):
     return model
 
 # Preprocess the data.
-def preprocess_data(episodes: List[List[Union[suite.TimeStep, np.ndarray]]]):
+def preprocess_data(episodes: List[List[Tuple[suite.TimeStep, np.ndarray, suite.TimeStep]]]):
     """
     This function takes a list of episodes, where each episode is a list of time steps. 
     It iterates over the episodes and time steps, and extracts the observations, actions, rewards, and next observations for each time step. 
