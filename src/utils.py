@@ -3,7 +3,7 @@ from keras.layers import Dense
 from keras import Model
 from dm_control import suite
 import numpy as np
-from typing import List, Tuple
+from typing import List, Union
 
 # Define the actor model.
 def actor_model(env: suite.Environment):
