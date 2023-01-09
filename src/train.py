@@ -74,7 +74,7 @@ def train_sac() -> Tuple[SACAgent, suite.Environment, tf.keras.Model, tf.keras.M
     # Close the environment.
     env.close()
 
-    return agent, env, actor
+    return agent, env, actor, critic
 
 if __name__ == "__main__":
     pass
