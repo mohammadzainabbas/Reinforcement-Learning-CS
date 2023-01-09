@@ -26,6 +26,11 @@ def critic_model(env: suite.Environment):
 
 # Preprocess the data.
 def preprocess_data(episodes):
+    """
+    This function takes a list of episodes, where each episode is a list of time steps. 
+    It iterates over the episodes and time steps, and extracts the observations, actions, rewards, and next observations for each time step. 
+    It then returns these data as NumPy arrays, which can be used to train the SAC agent.
+    """
     observations, actions, rewards, next_observations, dones = [], [], [], [], []
     for episode in episodes:
         for time_step, action, next_time_step in episode:
