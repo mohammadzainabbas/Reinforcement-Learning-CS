@@ -38,9 +38,9 @@ manager = tf.train.CheckpointManager(checkpoint, directory=checkpoint_dir, max_t
 # Restore the checkpoint if it exists.
 checkpoint.restore(manager.latest_checkpoint)
 if manager.latest_checkpoint:
-    print(f'Restored from {manager.latest_checkpoint}')
+    print_log(f'Restored from {manager.latest_checkpoint}')
 else:
-    print('Initializing from scratch.')
+    print_log('Initializing from scratch.')
 
 # Training loop.
 for epoch in range(1000):
