@@ -10,6 +10,7 @@ from utils import actor_model, critic_model, preprocess_data, print_log
 SEED = 42
 EPOCHS = 1000
 EPISODES = 10
+DISCOUNT_FACTOR = 0.99
 
 # Set the random seed for reproducibility.
 np.random.seed(SEED)
@@ -27,7 +28,7 @@ critic = critic_model(env=env)
 agent = SACAgent(actor, critic)
 
 # Set the discount factor and target entropy.
-agent.discount_factor = 0.99
+agent.discount_factor = DISCOUNT_FACTOR
 agent.target_entropy = -np.prod(env.action_spec().shape)
 
 # Set the learning rate and optimizer.
