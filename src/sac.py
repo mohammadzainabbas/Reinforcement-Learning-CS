@@ -1,6 +1,18 @@
 import tensorflow as tf
 
 class SACAgent:
+    """
+    Soft Actor-Critic agent.
+
+    __init__: Initializes the agent with the actor and critic models, as well as the target actor and critic models that are used for online learning. It also creates an empty replay buffer to store data for training.
+
+    select_action: Selects an action for the environment based on the current state. It uses the actor model to compute the action logits and then samples from the categorical distribution defined by these logits.
+
+    train_step: Updates the agent using a batch of data from the replay buffer. It first computes the Q-values and target Q-values using the critic and target critic models, respectively. It then updates the critic model by minimizing the loss between the Q-values and target Q-values. It also updates the actor model by minimizing the negative expected return, which is approximated using the critic model. Finally, it updates the target actor and critic models using the updated actor and critic models.
+
+    update_targets: Updates the target actor and critic models using a soft update rule with a weight of tau.
+
+    """
     def __init__(self, actor, critic):
         self.actor = actor
         self.critic = critic
