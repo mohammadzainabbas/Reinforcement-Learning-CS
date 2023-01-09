@@ -5,8 +5,8 @@ class SACAgent:
     Soft Actor-Critic agent.
 
     __init__: Initializes the agent with the actor and critic models, as well as the target actor and critic models that are used for online learning. It also creates an empty replay buffer to store data for training.
-    train_step: Updates the agent using a batch of data from the replay buffer. It first computes the Q-values and target Q-values using the critic and target critic models, respectively. It then updates the critic model by minimizing the loss between the Q-values and target Q-values. It also updates the actor model by minimizing the negative expected return, which is approximated using the critic model. Finally, it updates the target actor and critic models using the updated actor and critic models.
-    update_targets: Updates the target actor and critic models using a soft update rule with a weight of tau.
+    train_step: 
+    update_targets: 
 
     """
     def __init__(self, actor, critic):
@@ -36,6 +36,7 @@ class SACAgent:
 
     def train_step(self, observations, actions, rewards, next_observations, dones, optimizer):
         """
+        Updates the agent using a batch of data from the replay buffer. It first computes the Q-values and target Q-values using the critic and target critic models, respectively. It then updates the critic model by minimizing the loss between the Q-values and target Q-values. It also updates the actor model by minimizing the negative expected return, which is approximated using the critic model. Finally, it updates the target actor and critic models using the updated actor and critic models.
         """
         # Store the data in the replay buffer.
         for i in range(observations.shape[0]):
@@ -85,6 +86,7 @@ class SACAgent:
 
         def update_targets(self):
             """
+            Updates the target actor and critic models using a soft update rule with a weight of tau.
             """
             actor_weights = self.actor.get_weights()
             target_actor_weights = self.target_actor.get_weights()
