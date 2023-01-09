@@ -1,7 +1,7 @@
 import tensorflow as tf
 from keras.layers import Dense
 from keras import Model
-
+from dm_control import suite
 # Define the actor model.
 def actor_model():
     inputs = tf.keras.Input(shape=(env.observation_spec().shape[0],))
