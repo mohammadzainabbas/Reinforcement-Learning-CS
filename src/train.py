@@ -1,6 +1,6 @@
 import dm_control
 import numpy as np
-
+from typing import Tuple
 import tensorflow as tf
 
 from sac import SACAgent
