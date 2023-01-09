@@ -35,7 +35,11 @@ class SACAgent:
 
     def train_step(self, observations, actions, rewards, next_observations, dones, optimizer):
         """
-        Updates the agent using a batch of data from the replay buffer. It first computes the Q-values and target Q-values using the critic and target critic models, respectively. It then updates the critic model by minimizing the loss between the Q-values and target Q-values. It also updates the actor model by minimizing the negative expected return, which is approximated using the critic model. Finally, it updates the target actor and critic models using the updated actor and critic models.
+        Updates the agent using a batch of data from the replay buffer. 
+        It first computes the Q-values and target Q-values using the critic and target critic models, respectively. 
+        It then updates the critic model by minimizing the loss between the Q-values and target Q-values. 
+        It also updates the actor model by minimizing the negative expected return, which is approximated using the critic model. 
+        Finally, it updates the target actor and critic models using the updated actor and critic models.
         """
         # Store the data in the replay buffer.
         for i in range(observations.shape[0]):
