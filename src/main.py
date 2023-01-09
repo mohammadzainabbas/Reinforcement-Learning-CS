@@ -7,7 +7,7 @@ from tensorflow.keras.layers import Dense
 from tensorflow.keras import Model
 
 from sac import SACAgent
-from utils import actor_model, critic_model
+from utils import actor_model, critic_model, preprocess_data
 
 # Set the random seed for reproducibility.
 SEED = 42

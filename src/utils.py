@@ -22,3 +22,21 @@ def critic_model(env: suite.Environment):
     value = Dense(1)(x)
     model = Model(inputs=inputs, outputs=value)
     return model
+
+# Preprocess the data.
+def preprocess_data(episodes):
+    observations, actions, rewards, next_observations, dones = [], [], [], [], []
+    for episode in episodes:
+        for time_step, action, next_time_step in episode:
+            observations.append(time_step.observation)
+            actions.append(action)
+            rewards.append(next_time_step.reward)
+            next_observations.append(next_time_step.observation)
+            dones.append(next_time_step.last())
+    return (
+        np.array(observations),
+        np.array(actions),
+        np.array(rewards),
+        np.array(next_observations),
+        np.array(dones),
+    )
