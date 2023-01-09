@@ -15,16 +15,6 @@ def actor_model(env: suite.Environment):
 
 # Define the critic model.
 def critic_model(env: suite.Environment):
-    inputs = tf.keras.Input(shape=(env.observation_spec().shape[0] + env.action_spec().shape[0],))
-    x = Dense(32, activation='relu')(inputs)
-    x = Dense(32, activation='relu')(x)
-    x = Dense(32, activation='relu')(x)
-    value = Dense(1)(x)
-    model = Model(inputs=inputs, outputs=value)
-    return model
-
-# Define the critic model.
-def critic_model():
     inputs = tf.keras.Input(shape=(env.observation_spec().shape[0],))
     x = Dense(32, activation='relu')(inputs)
     x = Dense(32, activation='relu')(x)
