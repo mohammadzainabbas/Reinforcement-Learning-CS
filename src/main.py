@@ -6,7 +6,8 @@ import tensorflow as tf
 from tensorflow.keras.layers import Dense
 from tensorflow.keras import Model
 
-import rl_sac
+from sac import SACAgent
+from utils import actor_model, critic_model
 
 # Set the random seed for reproducibility.
 np.random.seed(42)
@@ -21,7 +22,7 @@ actor = Actor_model()
 critic = critic_model()
 
 # Create the SAC agent.
-agent = rl_sac.SACAgent(actor, critic)
+agent = SACAgent(actor, critic)
 
 # Set the discount factor and target entropy.
 agent.discount_factor = 0.99
