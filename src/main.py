@@ -3,8 +3,8 @@ import dm_env
 import numpy as np
 
 import tensorflow as tf
-from tensorflow.keras.layers import Dense
-from tensorflow.keras import Model
+from keras.layers import Dense
+from keras import Model
 
 from sac import SACAgent
 from utils import actor_model, critic_model, preprocess_data
