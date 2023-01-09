@@ -19,7 +19,7 @@ def train_sac() -> Tuple[SACAgent, control.Environment, tf.keras.Model, tf.keras
     tf.random.set_seed(SEED)
 
     # Load the `manipulator` environment.
-    env = dm_control.suite.load('manipulator', 'insert_ball', task_kwargs=dict(target_size='large'), visualize_reward=True)
+    env = dm_control.suite.load('manipulator', 'insert_ball', environment_kwargs=dict(target_size='large'), visualize_reward=True)
 
     # Create the actor and critic models.
     actor = actor_model(env=env)
