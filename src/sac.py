@@ -13,8 +13,8 @@ class SACAgent:
     def __init__(self, actor, critic):
         """
         Initializes the agent with the actor and critic models, as well as the target actor and critic models that are used for online learning. It also creates an empty replay buffer to store data for training.
-        """
         self.actor = actor
+        """
         self.critic = critic
         self.target_actor = tf.keras.models.clone_model(actor)
         self.target_actor.set_weights(actor.get_weights())
@@ -26,6 +26,8 @@ class SACAgent:
         self.learning_rate = None
 
     def select_action(self, time_step):
+        """
+        """
         observation = time_step.observation
         logits = self.actor(observation[None, :])
         action = tf.random.categorical(logits, num_samples=1)[0, 0]
@@ -33,6 +35,8 @@ class SACAgent:
         return action[None]
 
     def train_step(self, observations, actions, rewards, next_observations, dones, optimizer):
+        """
+        """
         # Store the data in the replay buffer.
         for i in range(observations.shape[0]):
             self.replay_buffer.append((observations[i], actions[i], rewards[i], next_observations[i], dones[i]))
@@ -80,6 +84,8 @@ class SACAgent:
             self.update_targets()
 
         def update_targets(self):
+            """
+            """
             actor_weights = self.actor.get_weights()
             target_actor_weights = self.target_actor.get_weights()
             for i in range(len(actor_weights)):
