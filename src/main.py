@@ -9,6 +9,7 @@ from utils import actor_model, critic_model, preprocess_data, print_log
 # Defaults
 SEED = 42
 EPOCHS = 1000
+EPISODES = 10
 
 # Set the random seed for reproducibility.
 np.random.seed(SEED)
@@ -46,10 +47,10 @@ else:
     print_log('Initializing from scratch.')
 
 # Training loop.
-for epoch in range(1000):
+for epoch in range(EPOCHS):
     # Collect a few episodes of data.
     episodes = []
-    for _ in range(10):
+    for _ in range(EPISODES):
         episode = []
         time_step = env.reset()
         while not time_step.last():
