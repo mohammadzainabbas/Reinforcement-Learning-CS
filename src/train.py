@@ -1,6 +1,6 @@
 from typing import Tuple
 import dm_control
-from dm_control import suite
+from dm_control.rl import control
 import numpy as np
 import tensorflow as tf
 
