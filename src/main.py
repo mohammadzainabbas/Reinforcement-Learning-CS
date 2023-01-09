@@ -6,8 +6,11 @@ import tensorflow as tf
 from sac import SACAgent
 from utils import actor_model, critic_model, preprocess_data, print_log
 
-# Set the random seed for reproducibility.
+# Defaults
 SEED = 42
+EPOCHS = 1000
+
+# Set the random seed for reproducibility.
 np.random.seed(SEED)
 tf.random.set_seed(SEED)
 
