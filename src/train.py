@@ -6,7 +6,7 @@ import tensorflow as tf
 from sac import SACAgent
 from utils import actor_model, critic_model, preprocess_data, print_log
 
-def train_sac():
+def train_sac() -> SACAgent:
     # Defaults
     SEED = 42
     EPOCHS = 1000
