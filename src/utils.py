@@ -6,6 +6,7 @@ import numpy as np
 from typing import List, Tuple
 
 def print_log(text: str, **kwargs): print(f"[ log ] {text}",**kwargs)
+def print_error(text: str, **kwargs): print(f"[ error ] {text}",**kwargs)
 
 # Define the actor model.
 def actor_model(env: suite.Environment):

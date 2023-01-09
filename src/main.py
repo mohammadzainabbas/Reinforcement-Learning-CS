@@ -4,7 +4,7 @@ import numpy as np
 import tensorflow as tf
 
 from sac import SACAgent
-from utils import actor_model, critic_model, preprocess_data
+from utils import actor_model, critic_model, preprocess_data, print_log
 
 # Set the random seed for reproducibility.
 SEED = 42
