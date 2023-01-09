@@ -26,7 +26,7 @@ def critic_model(env: suite.Environment):
     return model
 
 # Preprocess the data.
-def preprocess_data(episodes: List[List[Tuple[suite.TimeStep, np.ndarray, suite.TimeStep]]]):
+def preprocess_data(episodes: List[List[Union[suite.TimeStep, np.ndarray]]]):
     """
     This function takes a list of episodes, where each episode is a list of time steps. 
     It iterates over the episodes and time steps, and extracts the observations, actions, rewards, and next observations for each time step. 
