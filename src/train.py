@@ -6,7 +6,7 @@ import tensorflow as tf
 from sac import SACAgent
 from utils import actor_model, critic_model, preprocess_data, print_log
 
-def train():
+def train_sac():
     # Defaults
     SEED = 42
     EPOCHS = 1000
@@ -18,8 +18,7 @@ def train():
     tf.random.set_seed(SEED)
 
     # Load the `manipulator` environment.
-    env = dm_control.suite.load(
-        'manipulator', 'insert_ball', task_kwargs=dict(target_size='large'))
+    env = dm_control.suite.load('manipulator', 'insert_ball', task_kwargs=dict(target_size='large'))
 
     # Create the actor and critic models.
     actor = actor_model(env=env)
