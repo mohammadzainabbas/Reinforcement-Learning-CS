@@ -1,4 +1,5 @@
-
+import tensorflow as tf
+from tensorflow.keras.layers import Dense
 
 # Define the actor model.
 def actor_model():
