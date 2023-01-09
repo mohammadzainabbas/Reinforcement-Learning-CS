@@ -3,7 +3,7 @@ from keras.layers import Dense
 from keras import Model
 from dm_control import suite
 # Define the actor model.
-def actor_model():
+def actor_model(env: suite.Environment):
     inputs = tf.keras.Input(shape=(env.observation_spec().shape[0],))
     x = Dense(32, activation='relu')(inputs)
     x = Dense(32, activation='relu')(x)
