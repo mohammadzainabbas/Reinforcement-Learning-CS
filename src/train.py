@@ -72,3 +72,6 @@ for epoch in range(EPOCHS):
 
 # Close the environment.
 env.close()
+
+if __name__ == "__main__":
+    pass
