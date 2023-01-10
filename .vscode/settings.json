@@ -1,4 +1,5 @@
 {
     "editor.formatOnSave": true,
-    "useta"
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4,
 }
