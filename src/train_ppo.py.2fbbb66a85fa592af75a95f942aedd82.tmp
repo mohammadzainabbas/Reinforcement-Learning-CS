@@ -380,10 +380,5 @@ def main() -> None:
 	# 	env.render()
 
 
-
-
-
-
-
 if __name__ == '__main__':
 	main()
