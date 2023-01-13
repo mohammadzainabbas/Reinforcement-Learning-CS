@@ -44,7 +44,6 @@ Metrics = types.Metrics
 
 _PMAP_AXIS_NAME = 'i'
 
-
 @flax.struct.dataclass
 class TrainingState:
   """Contains training state for the learner."""
@@ -340,4 +339,3 @@ def train(environment: envs.Env,
   return (make_policy, params, metrics)
 
 if __name__ == '__main__':
-	
