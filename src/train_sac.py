@@ -123,12 +123,10 @@ def train(
 	if max_devices_per_host is not None:
 		local_devices_to_use = min(local_devices_to_use, max_devices_per_host)
 	device_count = local_devices_to_use * jax.process_count()
-	logging.info('local_device_count: %s; total_device_count: %s',
-				local_devices_to_use, device_count)
+	logging.info('local_device_count: %s; total_device_count: %s', local_devices_to_use, device_count)
 
 	if min_replay_size >= num_timesteps:
-		raise ValueError(
-			'No training will happen because min_replay_size >= num_timesteps')
+		raise ValueError('No training will happen because min_replay_size >= num_timesteps')
 
 	if max_replay_size is None:
 		max_replay_size = num_timesteps
