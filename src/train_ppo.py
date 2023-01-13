@@ -365,11 +365,12 @@ def main() -> None:
 	# Run training.
 	make_inference_fn, params, metrics = train_fn(environment=env, progress_fn=progress)
 
+	# Save the trained model.
 	output_model_path = join(getcwd(), "ppo_params")
 	model.save_params(output_model_path, params)
+
 	inference_fn = make_inference_fn(params)
 
-	# Save the trained model.
 
 
 
