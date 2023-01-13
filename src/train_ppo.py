@@ -320,5 +320,8 @@ def train(
 	pmap.synchronize_hosts()
 	return (make_policy, params, metrics)
 
+def main() -> None:
+
+
 if __name__ == '__main__':
-	
+	main()
