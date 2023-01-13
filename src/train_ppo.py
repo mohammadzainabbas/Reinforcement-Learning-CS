@@ -65,7 +65,9 @@ def train(
 	normalize_advantage: bool = True,
 	eval_env: Optional[envs.Env] = None):
 	"""
-	PPO training.
+	Proximal policy optimization training.
+
+	See: https://arxiv.org/pdf/1707.06347.pdf
 	"""
 	assert batch_size * num_minibatches % num_envs == 0
 	xt = time.time()
@@ -319,4 +321,4 @@ def train(
 	return (make_policy, params, metrics)
 
 if __name__ == '__main__':
-	pass
+	
