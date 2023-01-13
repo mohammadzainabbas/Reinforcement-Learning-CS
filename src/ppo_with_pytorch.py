@@ -180,12 +180,12 @@ class PPOAgent(nn.Module):
 
 		return policy_loss + v_loss + entropy_loss
 
-StepData = collections.namedtuple(
-	'StepData',
-	('observation', 'logits', 'action', 'reward', 'done', 'truncation'))
+StepData = collections.namedtuple('StepData', ('observation', 'logits', 'action', 'reward', 'done', 'truncation'))
 
 def sd_map(f: Callable[..., torch.Tensor], *sds) -> StepData:
-	"""Map a function over each field in StepData."""
+	"""
+	Map a function over each field in StepData.
+	"""
 	items = {}
 	keys = sds[0]._asdict().keys()
 	for k in keys:
