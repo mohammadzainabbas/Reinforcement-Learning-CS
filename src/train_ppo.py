@@ -3,6 +3,8 @@ from datetime import datetime
 import time
 from typing import Callable, Optional, Tuple
 
+import matplotlib.pyplot as plt
+
 from os import getcwd
 from os.path import join
 
