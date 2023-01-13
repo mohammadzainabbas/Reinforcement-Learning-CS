@@ -337,7 +337,7 @@ def main() -> None:
 
 	train_fn = functools.partial(
 		train, 
-		num_timesteps=600_000_000,
+		num_timesteps=60_000_000,
 		num_evals=10,
 		reward_scaling=10,
 		episode_length=1000,
