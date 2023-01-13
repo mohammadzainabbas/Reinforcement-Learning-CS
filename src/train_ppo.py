@@ -379,11 +379,5 @@ def main() -> None:
 	# 	state, reward, done, _ = env.step(action)
 	# 	env.render()
 
-
-
-
-
-
-
 if __name__ == '__main__':
 	main()
