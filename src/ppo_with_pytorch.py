@@ -193,7 +193,9 @@ def sd_map(f: Callable[..., torch.Tensor], *sds) -> StepData:
 	return StepData(**items)
 
 def eval_unroll(agent, env, length):
-	"""Return number of episodes and average reward for a single unroll."""
+	"""
+	Return number of episodes and average reward for a single unroll.
+	"""
 	observation = env.reset()
 	episodes = torch.zeros((), device=agent.device)
 	episode_reward = torch.zeros((), device=agent.device)
