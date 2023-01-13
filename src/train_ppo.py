@@ -371,6 +371,11 @@ def main() -> None:
 
 	inference_fn = make_inference_fn(params)
 
+	env = envs.create(env_name=ENV_NAME)
+	jit_env_reset = jax.jit(env.reset)
+	jit_env_step = jax.jit(env.step)
+	jit_inference_fn = jax.jit(inference_fn)
+
 	# Run inference.
 	env = envs.get_environment(env_name=ENV_NAME)
 	state = env.reset(rng=jp.random_prngkey(seed=SEED))
