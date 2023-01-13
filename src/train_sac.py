@@ -18,6 +18,7 @@ from brax.io import html
 from brax.training import acting
 from brax.training import gradients
 from brax.training import pmap
+from brax.training import replay_buffers
 from brax.training import types
 from brax.training.acme import running_statistics
 from brax.training.acme import specs
