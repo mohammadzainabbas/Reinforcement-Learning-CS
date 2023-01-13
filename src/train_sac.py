@@ -381,8 +381,7 @@ def train(
 	env_state = jax.pmap(env.reset)(env_keys)
 
 	# Replay buffer init
-	buffer_state = jax.pmap(replay_buffer.init)(
-		jax.random.split(rb_key, local_devices_to_use))
+	buffer_state = jax.pmap(replay_buffer.init)(jax.random.split(rb_key, local_devices_to_use))
 
 	if not eval_env:
 		eval_env = env
