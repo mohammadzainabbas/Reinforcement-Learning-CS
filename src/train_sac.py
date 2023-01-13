@@ -191,12 +191,9 @@ def train(
 		reward_scaling=reward_scaling,
 		discounting=discounting,
 		action_size=action_size)
-	alpha_update = gradients.gradient_update_fn(
-		alpha_loss, alpha_optimizer, pmap_axis_name=_PMAP_AXIS_NAME)
-	critic_update = gradients.gradient_update_fn(
-		critic_loss, q_optimizer, pmap_axis_name=_PMAP_AXIS_NAME)
-	actor_update = gradients.gradient_update_fn(
-		actor_loss, policy_optimizer, pmap_axis_name=_PMAP_AXIS_NAME)
+	alpha_update = gradients.gradient_update_fn(alpha_loss, alpha_optimizer, pmap_axis_name=_PMAP_AXIS_NAME)
+	critic_update = gradients.gradient_update_fn(critic_loss, q_optimizer, pmap_axis_name=_PMAP_AXIS_NAME)
+	actor_update = gradients.gradient_update_fn(actor_loss, policy_optimizer, pmap_axis_name=_PMAP_AXIS_NAME)
 
 	def sgd_step(
 		carry: Tuple[TrainingState, PRNGKey],
