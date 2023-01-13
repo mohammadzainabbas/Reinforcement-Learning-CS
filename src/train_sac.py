@@ -322,10 +322,10 @@ def train(
 	) -> Tuple[TrainingState, envs.State, ReplayBufferState, Metrics]:
 
 		def f(carry, unused_t):
-		ts, es, bs, k = carry
-		k, new_key = jax.random.split(k)
-		ts, es, bs, metrics = training_step(ts, es, bs, k)
-		return (ts, es, bs, new_key), metrics
+			ts, es, bs, k = carry
+			k, new_key = jax.random.split(k)
+			ts, es, bs, metrics = training_step(ts, es, bs, k)
+			return (ts, es, bs, new_key), metrics
 
 		(training_state, env_state, buffer_state, key), metrics = jax.lax.scan(
 			f, (training_state, env_state, buffer_state, key), (),
