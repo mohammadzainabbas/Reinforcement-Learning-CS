@@ -83,259 +83,259 @@ def train(
 	progress_fn: Callable[[int, Metrics], None] = lambda *args: None,
 	normalize_advantage: bool = True,
 	eval_env: Optional[envs.Env] = None):
-  """PPO training."""
-  assert batch_size * num_minibatches % num_envs == 0
-  xt = time.time()
+	"""PPO training."""
+  	assert batch_size * num_minibatches % num_envs == 0
+  	xt = time.time()
 
-  process_count = jax.process_count()
-  process_id = jax.process_index()
-  local_device_count = jax.local_device_count()
-  local_devices_to_use = local_device_count
-  if max_devices_per_host:
-    local_devices_to_use = min(local_devices_to_use, max_devices_per_host)
-  logging.info(
-      'Device count: %d, process count: %d (id %d), local device count: %d, '
-      'devices to be used count: %d', jax.device_count(), process_count,
-      process_id, local_device_count, local_devices_to_use)
-  device_count = local_devices_to_use * process_count
+	process_count = jax.process_count()
+	process_id = jax.process_index()
+	local_device_count = jax.local_device_count()
+	local_devices_to_use = local_device_count
+	if max_devices_per_host:
+		local_devices_to_use = min(local_devices_to_use, max_devices_per_host)
+	logging.info(
+		'Device count: %d, process count: %d (id %d), local device count: %d, '
+		'devices to be used count: %d', jax.device_count(), process_count,
+		process_id, local_device_count, local_devices_to_use)
+	device_count = local_devices_to_use * process_count
 
-  # The number of environment steps executed for every training step.
-  env_step_per_training_step = (
-      batch_size * unroll_length * num_minibatches * action_repeat)
-  num_evals_after_init = max(num_evals - 1, 1)
-  # The number of training_step calls per training_epoch call.
-  # equals to ceil(num_timesteps / (num_evals * env_step_per_training_step))
-  num_training_steps_per_epoch = -(
-      -num_timesteps // (num_evals_after_init * env_step_per_training_step))
+	# The number of environment steps executed for every training step.
+	env_step_per_training_step = (
+		batch_size * unroll_length * num_minibatches * action_repeat)
+	num_evals_after_init = max(num_evals - 1, 1)
+	# The number of training_step calls per training_epoch call.
+	# equals to ceil(num_timesteps / (num_evals * env_step_per_training_step))
+	num_training_steps_per_epoch = -(
+		-num_timesteps // (num_evals_after_init * env_step_per_training_step))
 
-  assert num_envs % device_count == 0
-  env = environment
+	assert num_envs % device_count == 0
+	env = environment
 
-  env = wrappers.wrap_for_training(
-      env, episode_length=episode_length, action_repeat=action_repeat)
+	env = wrappers.wrap_for_training(
+		env, episode_length=episode_length, action_repeat=action_repeat)
 
-  reset_fn = jax.jit(jax.vmap(env.reset))
+	reset_fn = jax.jit(jax.vmap(env.reset))
 
-  normalize = lambda x, y: x
-  if normalize_observations:
-    normalize = running_statistics.normalize
-  ppo_network = network_factory(
-      env.observation_size,
-      env.action_size,
-      preprocess_observations_fn=normalize)
-  make_policy = ppo_networks.make_inference_fn(ppo_network)
+	normalize = lambda x, y: x
+	if normalize_observations:
+		normalize = running_statistics.normalize
+	ppo_network = network_factory(
+		env.observation_size,
+		env.action_size,
+		preprocess_observations_fn=normalize)
+	make_policy = ppo_networks.make_inference_fn(ppo_network)
 
-  optimizer = optax.adam(learning_rate=learning_rate)
+	optimizer = optax.adam(learning_rate=learning_rate)
 
-  loss_fn = functools.partial(
-      ppo_losses.compute_ppo_loss,
-      ppo_network=ppo_network,
-      entropy_cost=entropy_cost,
-      discounting=discounting,
-      reward_scaling=reward_scaling,
-      gae_lambda=gae_lambda,
-      clipping_epsilon=clipping_epsilon,
-      normalize_advantage=normalize_advantage)
+	loss_fn = functools.partial(
+		ppo_losses.compute_ppo_loss,
+		ppo_network=ppo_network,
+		entropy_cost=entropy_cost,
+		discounting=discounting,
+		reward_scaling=reward_scaling,
+		gae_lambda=gae_lambda,
+		clipping_epsilon=clipping_epsilon,
+		normalize_advantage=normalize_advantage)
 
-  gradient_update_fn = gradients.gradient_update_fn(
-      loss_fn, optimizer, pmap_axis_name=_PMAP_AXIS_NAME, has_aux=True)
+	gradient_update_fn = gradients.gradient_update_fn(
+		loss_fn, optimizer, pmap_axis_name=_PMAP_AXIS_NAME, has_aux=True)
 
-  def minibatch_step(
-      carry, data: types.Transition,
-      normalizer_params: running_statistics.RunningStatisticsState):
-    optimizer_state, params, key = carry
-    key, key_loss = jax.random.split(key)
-    (_, metrics), params, optimizer_state = gradient_update_fn(
-        params,
-        normalizer_params,
-        data,
-        key_loss,
-        optimizer_state=optimizer_state)
+	def minibatch_step(
+		carry, data: types.Transition,
+		normalizer_params: running_statistics.RunningStatisticsState):
+		optimizer_state, params, key = carry
+		key, key_loss = jax.random.split(key)
+		(_, metrics), params, optimizer_state = gradient_update_fn(
+			params,
+			normalizer_params,
+			data,
+			key_loss,
+			optimizer_state=optimizer_state)
 
-    return (optimizer_state, params, key), metrics
+		return (optimizer_state, params, key), metrics
 
-  def sgd_step(carry, unused_t, data: types.Transition,
-               normalizer_params: running_statistics.RunningStatisticsState):
-    optimizer_state, params, key = carry
-    key, key_perm, key_grad = jax.random.split(key, 3)
+	def sgd_step(carry, unused_t, data: types.Transition,
+				normalizer_params: running_statistics.RunningStatisticsState):
+		optimizer_state, params, key = carry
+		key, key_perm, key_grad = jax.random.split(key, 3)
 
-    def convert_data(x: jnp.ndarray):
-      x = jax.random.permutation(key_perm, x)
-      x = jnp.reshape(x, (num_minibatches, -1) + x.shape[1:])
-      return x
+		def convert_data(x: jnp.ndarray):
+		x = jax.random.permutation(key_perm, x)
+		x = jnp.reshape(x, (num_minibatches, -1) + x.shape[1:])
+		return x
 
-    shuffled_data = jax.tree_util.tree_map(convert_data, data)
-    (optimizer_state, params, _), metrics = jax.lax.scan(
-        functools.partial(minibatch_step, normalizer_params=normalizer_params),
-        (optimizer_state, params, key_grad),
-        shuffled_data,
-        length=num_minibatches)
-    return (optimizer_state, params, key), metrics
+		shuffled_data = jax.tree_util.tree_map(convert_data, data)
+		(optimizer_state, params, _), metrics = jax.lax.scan(
+			functools.partial(minibatch_step, normalizer_params=normalizer_params),
+			(optimizer_state, params, key_grad),
+			shuffled_data,
+			length=num_minibatches)
+		return (optimizer_state, params, key), metrics
 
-  def training_step(
-      carry: Tuple[TrainingState, envs.State, PRNGKey],
-      unused_t) -> Tuple[Tuple[TrainingState, envs.State, PRNGKey], Metrics]:
-    training_state, state, key = carry
-    key_sgd, key_generate_unroll, new_key = jax.random.split(key, 3)
+	def training_step(
+		carry: Tuple[TrainingState, envs.State, PRNGKey],
+		unused_t) -> Tuple[Tuple[TrainingState, envs.State, PRNGKey], Metrics]:
+		training_state, state, key = carry
+		key_sgd, key_generate_unroll, new_key = jax.random.split(key, 3)
 
-    policy = make_policy(
-        (training_state.normalizer_params, training_state.params.policy))
+		policy = make_policy(
+			(training_state.normalizer_params, training_state.params.policy))
 
-    def f(carry, unused_t):
-      current_state, current_key = carry
-      current_key, next_key = jax.random.split(current_key)
-      next_state, data = acting.generate_unroll(
-          env,
-          current_state,
-          policy,
-          current_key,
-          unroll_length,
-          extra_fields=('truncation',))
-      return (next_state, next_key), data
+		def f(carry, unused_t):
+			current_state, current_key = carry
+			current_key, next_key = jax.random.split(current_key)
+			next_state, data = acting.generate_unroll(
+				env,
+				current_state,
+				policy,
+				current_key,
+				unroll_length,
+				extra_fields=('truncation',))
+			return (next_state, next_key), data
 
-    (state, _), data = jax.lax.scan(
-        f, (state, key_generate_unroll), (),
-        length=batch_size * num_minibatches // num_envs)
-    # Have leading dimentions (batch_size * num_minibatches, unroll_length)
-    data = jax.tree_util.tree_map(lambda x: jnp.swapaxes(x, 1, 2), data)
-    data = jax.tree_util.tree_map(lambda x: jnp.reshape(x, (-1,) + x.shape[2:]),
-                                  data)
-    assert data.discount.shape[1:] == (unroll_length,)
+		(state, _), data = jax.lax.scan(
+			f, (state, key_generate_unroll), (),
+			length=batch_size * num_minibatches // num_envs)
+		# Have leading dimentions (batch_size * num_minibatches, unroll_length)
+		data = jax.tree_util.tree_map(lambda x: jnp.swapaxes(x, 1, 2), data)
+		data = jax.tree_util.tree_map(lambda x: jnp.reshape(x, (-1,) + x.shape[2:]),
+									data)
+		assert data.discount.shape[1:] == (unroll_length,)
 
-    # Update normalization params and normalize observations.
-    normalizer_params = running_statistics.update(
-        training_state.normalizer_params,
-        data.observation,
-        pmap_axis_name=_PMAP_AXIS_NAME)
+		# Update normalization params and normalize observations.
+		normalizer_params = running_statistics.update(
+			training_state.normalizer_params,
+			data.observation,
+			pmap_axis_name=_PMAP_AXIS_NAME)
 
-    (optimizer_state, params, _), metrics = jax.lax.scan(
-        functools.partial(
-            sgd_step, data=data, normalizer_params=normalizer_params),
-        (training_state.optimizer_state, training_state.params, key_sgd), (),
-        length=num_updates_per_batch)
+		(optimizer_state, params, _), metrics = jax.lax.scan(
+			functools.partial(
+				sgd_step, data=data, normalizer_params=normalizer_params),
+			(training_state.optimizer_state, training_state.params, key_sgd), (),
+			length=num_updates_per_batch)
 
-    new_training_state = TrainingState(
-        optimizer_state=optimizer_state,
-        params=params,
-        normalizer_params=normalizer_params,
-        env_steps=training_state.env_steps + env_step_per_training_step)
-    return (new_training_state, state, new_key), metrics
+		new_training_state = TrainingState(
+			optimizer_state=optimizer_state,
+			params=params,
+			normalizer_params=normalizer_params,
+			env_steps=training_state.env_steps + env_step_per_training_step)
+		return (new_training_state, state, new_key), metrics
 
-  def training_epoch(training_state: TrainingState, state: envs.State,
-                     key: PRNGKey) -> Tuple[TrainingState, envs.State, Metrics]:
-    (training_state, state, _), loss_metrics = jax.lax.scan(
-        training_step, (training_state, state, key), (),
-        length=num_training_steps_per_epoch)
-    loss_metrics = jax.tree_util.tree_map(jnp.mean, loss_metrics)
-    return training_state, state, loss_metrics
+	def training_epoch(training_state: TrainingState, state: envs.State,
+						key: PRNGKey) -> Tuple[TrainingState, envs.State, Metrics]:
+		(training_state, state, _), loss_metrics = jax.lax.scan(
+			training_step, (training_state, state, key), (),
+			length=num_training_steps_per_epoch)
+		loss_metrics = jax.tree_util.tree_map(jnp.mean, loss_metrics)
+		return training_state, state, loss_metrics
 
-  training_epoch = jax.pmap(training_epoch, axis_name=_PMAP_AXIS_NAME)
+	training_epoch = jax.pmap(training_epoch, axis_name=_PMAP_AXIS_NAME)
 
-  # Note that this is NOT a pure jittable method.
-  def training_epoch_with_timing(
-      training_state: TrainingState, env_state: envs.State,
-      key: PRNGKey) -> Tuple[TrainingState, envs.State, Metrics]:
-    nonlocal training_walltime
-    t = time.time()
-    (training_state, env_state,
-     metrics) = training_epoch(training_state, env_state, key)
-    metrics = jax.tree_util.tree_map(jnp.mean, metrics)
-    jax.tree_util.tree_map(lambda x: x.block_until_ready(), metrics)
+	# Note that this is NOT a pure jittable method.
+	def training_epoch_with_timing(
+		training_state: TrainingState, env_state: envs.State,
+		key: PRNGKey) -> Tuple[TrainingState, envs.State, Metrics]:
+		nonlocal training_walltime
+		t = time.time()
+		(training_state, env_state,
+		metrics) = training_epoch(training_state, env_state, key)
+		metrics = jax.tree_util.tree_map(jnp.mean, metrics)
+		jax.tree_util.tree_map(lambda x: x.block_until_ready(), metrics)
 
-    epoch_training_time = time.time() - t
-    training_walltime += epoch_training_time
-    sps = (num_training_steps_per_epoch *
-           env_step_per_training_step) / epoch_training_time
-    metrics = {
-        'training/sps': sps,
-        'training/walltime': training_walltime,
-        **{f'training/{name}': value for name, value in metrics.items()}
-    }
-    return training_state, env_state, metrics
+		epoch_training_time = time.time() - t
+		training_walltime += epoch_training_time
+		sps = (num_training_steps_per_epoch *
+			env_step_per_training_step) / epoch_training_time
+		metrics = {
+			'training/sps': sps,
+			'training/walltime': training_walltime,
+			**{f'training/{name}': value for name, value in metrics.items()}
+		}
+		return training_state, env_state, metrics
 
-  key = jax.random.PRNGKey(seed)
-  global_key, local_key = jax.random.split(key)
-  del key
-  local_key = jax.random.fold_in(local_key, process_id)
-  local_key, key_env, eval_key = jax.random.split(local_key, 3)
-  # key_networks should be global, so that networks are initialized the same
-  # way for different processes.
-  key_policy, key_value = jax.random.split(global_key)
-  del global_key
+	key = jax.random.PRNGKey(seed)
+	global_key, local_key = jax.random.split(key)
+	del key
+	local_key = jax.random.fold_in(local_key, process_id)
+	local_key, key_env, eval_key = jax.random.split(local_key, 3)
+	# key_networks should be global, so that networks are initialized the same
+	# way for different processes.
+	key_policy, key_value = jax.random.split(global_key)
+	del global_key
 
-  init_params = ppo_losses.PPONetworkParams(
-      policy=ppo_network.policy_network.init(key_policy),
-      value=ppo_network.value_network.init(key_value))
-  training_state = TrainingState(
-      optimizer_state=optimizer.init(init_params),
-      params=init_params,
-      normalizer_params=running_statistics.init_state(
-          specs.Array((env.observation_size,), jnp.float32)),
-      env_steps=0)
-  training_state = jax.device_put_replicated(
-      training_state,
-      jax.local_devices()[:local_devices_to_use])
+	init_params = ppo_losses.PPONetworkParams(
+		policy=ppo_network.policy_network.init(key_policy),
+		value=ppo_network.value_network.init(key_value))
+	training_state = TrainingState(
+		optimizer_state=optimizer.init(init_params),
+		params=init_params,
+		normalizer_params=running_statistics.init_state(
+			specs.Array((env.observation_size,), jnp.float32)),
+		env_steps=0)
+	training_state = jax.device_put_replicated(
+		training_state,
+		jax.local_devices()[:local_devices_to_use])
 
-  key_envs = jax.random.split(key_env, num_envs // process_count)
-  key_envs = jnp.reshape(key_envs,
-                         (local_devices_to_use, -1) + key_envs.shape[1:])
-  env_state = reset_fn(key_envs)
+	key_envs = jax.random.split(key_env, num_envs // process_count)
+	key_envs = jnp.reshape(key_envs,
+							(local_devices_to_use, -1) + key_envs.shape[1:])
+	env_state = reset_fn(key_envs)
 
-  if not eval_env:
-    eval_env = env
-  else:
-    eval_env = wrappers.wrap_for_training(
-        eval_env, episode_length=episode_length, action_repeat=action_repeat)
+	if not eval_env:
+		eval_env = env
+	else:
+		eval_env = wrappers.wrap_for_training(
+			eval_env, episode_length=episode_length, action_repeat=action_repeat)
 
-  evaluator = acting.Evaluator(
-      eval_env,
-      functools.partial(make_policy, deterministic=deterministic_eval),
-      num_eval_envs=num_eval_envs,
-      episode_length=episode_length,
-      action_repeat=action_repeat,
-      key=eval_key)
+	evaluator = acting.Evaluator(
+		eval_env,
+		functools.partial(make_policy, deterministic=deterministic_eval),
+		num_eval_envs=num_eval_envs,
+		episode_length=episode_length,
+		action_repeat=action_repeat,
+		key=eval_key)
 
-  # Run initial eval
-  if process_id == 0 and num_evals > 1:
-    metrics = evaluator.run_evaluation(
-        _unpmap(
-            (training_state.normalizer_params, training_state.params.policy)),
-        training_metrics={})
-    logging.info(metrics)
-    progress_fn(0, metrics)
+	# Run initial eval
+	if process_id == 0 and num_evals > 1:
+		metrics = evaluator.run_evaluation(
+			_unpmap(
+				(training_state.normalizer_params, training_state.params.policy)),
+			training_metrics={})
+		logging.info(metrics)
+		progress_fn(0, metrics)
 
-  training_walltime = 0
-  current_step = 0
-  for it in range(num_evals_after_init):
-    logging.info('starting iteration %s %s', it, time.time() - xt)
+	training_walltime = 0
+	current_step = 0
+	for it in range(num_evals_after_init):
+		logging.info('starting iteration %s %s', it, time.time() - xt)
 
-    # optimization
-    epoch_key, local_key = jax.random.split(local_key)
-    epoch_keys = jax.random.split(epoch_key, local_devices_to_use)
-    (training_state, env_state,
-     training_metrics) = training_epoch_with_timing(training_state, env_state,
-                                                    epoch_keys)
-    current_step = int(_unpmap(training_state.env_steps))
+		# optimization
+		epoch_key, local_key = jax.random.split(local_key)
+		epoch_keys = jax.random.split(epoch_key, local_devices_to_use)
+		(training_state, env_state,
+		training_metrics) = training_epoch_with_timing(training_state, env_state,
+														epoch_keys)
+		current_step = int(_unpmap(training_state.env_steps))
 
-    if process_id == 0:
-      # Run evals.
-      metrics = evaluator.run_evaluation(
-          _unpmap(
-              (training_state.normalizer_params, training_state.params.policy)),
-          training_metrics)
-      logging.info(metrics)
-      progress_fn(current_step, metrics)
+		if process_id == 0:
+		# Run evals.
+		metrics = evaluator.run_evaluation(
+			_unpmap(
+				(training_state.normalizer_params, training_state.params.policy)),
+			training_metrics)
+		logging.info(metrics)
+		progress_fn(current_step, metrics)
 
-  total_steps = current_step
-  assert total_steps >= num_timesteps
+	total_steps = current_step
+	assert total_steps >= num_timesteps
 
-  # If there was no mistakes the training_state should still be identical on all
-  # devices.
-  pmap.assert_is_replicated(training_state)
-  params = _unpmap(
-      (training_state.normalizer_params, training_state.params.policy))
-  logging.info('total steps: %s', total_steps)
-  pmap.synchronize_hosts()
-  return (make_policy, params, metrics)
+	# If there was no mistakes the training_state should still be identical on all
+	# devices.
+	pmap.assert_is_replicated(training_state)
+	params = _unpmap(
+		(training_state.normalizer_params, training_state.params.policy))
+	logging.info('total steps: %s', total_steps)
+	pmap.synchronize_hosts()
+	return (make_policy, params, metrics)
 
 if __name__ == '__main__':
