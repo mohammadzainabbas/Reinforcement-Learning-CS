@@ -369,6 +369,14 @@ def main() -> None:
 	print(f'Time to jit: {times[1] - times[0]}')
 	print(f'Time to train: {times[-1] - times[1]}')
 
+	# Save plot
+	fig, ax = plt.subplots()
+	plt.plot(xdata, ydata)
+	plt.xlabel('Steps')
+	plt.ylabel('Reward')
+	plt.savefig('ppo.png')
+
+
 	# Save the trained model.
 	output_model_path = join(getcwd(), "ppo_params")
 	model.save_params(output_model_path, params)
