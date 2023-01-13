@@ -121,8 +121,7 @@ class PPOAgent(nn.Module):
 	def compute_gae(self, truncation, termination, reward, values, bootstrap_value):
 		truncation_mask = 1 - truncation
 		# Append bootstrapped value to get [v1, ..., v_t+1]
-		values_t_plus_1 = torch.cat(
-			[values[1:], torch.unsqueeze(bootstrap_value, 0)], dim=0)
+		values_t_plus_1 = torch.cat([values[1:], torch.unsqueeze(bootstrap_value, 0)], dim=0)
 		deltas = reward + self.discounting * (
 			1 - termination) * values_t_plus_1 - values
 		deltas *= truncation_mask
