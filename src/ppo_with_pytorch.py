@@ -351,10 +351,7 @@ def train(
 	return agent, env
 
 def main() -> None:
-	xdata = []
-	ydata = []
-	eval_sps = []
-	train_sps = []
+	xdata, ydata, eval_sps, train_sps = [], [], [], []
 	times = [datetime.now()]
 
 	def progress(num_steps, metrics):
