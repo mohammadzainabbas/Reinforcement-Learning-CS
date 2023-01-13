@@ -46,15 +46,15 @@ _PMAP_AXIS_NAME = 'i'
 
 @flax.struct.dataclass
 class TrainingState:
-  """Contains training state for the learner."""
-  optimizer_state: optax.OptState
-  params: ppo_losses.PPONetworkParams
-  normalizer_params: running_statistics.RunningStatisticsState
-  env_steps: jnp.ndarray
+	"""Contains training state for the learner."""
+	optimizer_state: optax.OptState
+	params: ppo_losses.PPONetworkParams
+	normalizer_params: running_statistics.RunningStatisticsState
+	env_steps: jnp.ndarray
 
 
 def _unpmap(v):
-  return jax.tree_util.tree_map(lambda x: x[0], v)
+	return jax.tree_util.tree_map(lambda x: x[0], v)
 
 
 def train(environment: envs.Env,
