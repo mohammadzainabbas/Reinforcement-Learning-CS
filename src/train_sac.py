@@ -451,8 +451,7 @@ def train(
 	total_steps = current_step
 	assert total_steps >= num_timesteps
 
-	params = _unpmap(
-		(training_state.normalizer_params, training_state.policy_params))
+	params = _unpmap((training_state.normalizer_params, training_state.policy_params))
 
 	# If there was no mistakes the training_state should still be identical on all
 	# devices.
