@@ -160,9 +160,9 @@ def train(
 		key, key_perm, key_grad = jax.random.split(key, 3)
 
 		def convert_data(x: jnp.ndarray):
-		x = jax.random.permutation(key_perm, x)
-		x = jnp.reshape(x, (num_minibatches, -1) + x.shape[1:])
-		return x
+			x = jax.random.permutation(key_perm, x)
+			x = jnp.reshape(x, (num_minibatches, -1) + x.shape[1:])
+			return x
 
 		shuffled_data = jax.tree_util.tree_map(convert_data, data)
 		(optimizer_state, params, _), metrics = jax.lax.scan(
