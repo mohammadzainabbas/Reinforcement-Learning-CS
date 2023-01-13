@@ -440,13 +440,13 @@ def train(
 				path = f'{checkpoint_logdir}_sac_{current_step}.pkl'
 				model.save_params(path, params)
 
-		# Run evals.
-		metrics = evaluator.run_evaluation(
-			_unpmap(
-				(training_state.normalizer_params, training_state.policy_params)),
-			training_metrics)
-		logging.info(metrics)
-		progress_fn(current_step, metrics)
+			# Run evals.
+			metrics = evaluator.run_evaluation(
+				_unpmap(
+					(training_state.normalizer_params, training_state.policy_params)),
+				training_metrics)
+			logging.info(metrics)
+			progress_fn(current_step, metrics)
 
 	total_steps = current_step
 	assert total_steps >= num_timesteps
