@@ -1,19 +1,9 @@
-#@title Import Brax and some helper modules
-from IPython.display import clear_output
-
 import collections
 from datetime import datetime
 import functools
 import math
 import time
 from typing import Any, Callable, Dict, Optional, Sequence
-
-try:
-	import brax
-except ImportError:
-	!pip install git+https://github.com/google/brax.git@main
-	clear_output()
-	import brax
 
 from brax import envs
 from brax.envs import to_torch
