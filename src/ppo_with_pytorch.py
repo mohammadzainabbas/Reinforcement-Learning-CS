@@ -20,6 +20,7 @@ import torch.nn.functional as F
 # have torch allocate on device first, to prevent JAX from swallowing up all the
 # GPU memory. By default JAX will pre-allocate 90% of the available GPU memory:
 # https://jax.readthedocs.io/en/latest/gpu_memory_allocation.html
+
 DEVICE = "cpu" if not torch.cuda.is_available() else "cuda"
 v = torch.ones(1, device=DEVICE)
 
