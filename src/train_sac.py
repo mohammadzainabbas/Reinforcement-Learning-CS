@@ -314,8 +314,7 @@ def train(
 			f, (training_state, env_state, buffer_state, key), (),
 			length=num_prefill_actor_steps)[0]
 
-	prefill_replay_buffer = jax.pmap(
-		prefill_replay_buffer, axis_name=_PMAP_AXIS_NAME)
+	prefill_replay_buffer = jax.pmap(prefill_replay_buffer, axis_name=_PMAP_AXIS_NAME)
 
 	def training_epoch(
 		training_state: TrainingState, env_state: envs.State,
