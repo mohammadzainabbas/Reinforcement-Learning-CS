@@ -207,7 +207,9 @@ def eval_unroll(agent, env, length):
 	return episodes, episode_reward / episodes
 
 def train_unroll(agent, env, observation, num_unrolls, unroll_length):
-	"""Return step data over multple unrolls."""
+	"""
+	Return step data over multple unrolls.
+	"""
 	sd = StepData([], [], [], [], [], [])
 	for _ in range(num_unrolls):
 		one_unroll = StepData([observation], [], [], [], [], [])
