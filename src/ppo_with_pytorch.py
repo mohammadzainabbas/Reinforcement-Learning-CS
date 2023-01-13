@@ -375,4 +375,3 @@ def main() -> None:
 	print(f'time to train: {times[-1] - times[1]}')
 	print(f'eval steps/sec: {np.mean(eval_sps[1:])}')
 	print(f'train steps/sec: {np.mean(train_sps[1:])}')
-	# !nvidia-smi -L
