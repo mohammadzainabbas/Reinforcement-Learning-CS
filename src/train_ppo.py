@@ -3,7 +3,6 @@ from datetime import datetime
 import time
 from typing import Callable, Optional, Tuple
 
-import os
 from os import getcwd
 from os.path import join
 
