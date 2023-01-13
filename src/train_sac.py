@@ -13,14 +13,12 @@ from absl import logging
 from brax import envs
 from brax import jumpy as jp
 from brax.envs import wrappers
-from brax.io import model
-from brax.io import html
+from brax.io import model, html
 from brax.training import acting, gradients, pmap, replay_buffers, types
 from brax.training.acme import running_statistics, specs
 from brax.training.agents.sac import losses as sac_losses
 from brax.training.agents.sac import networks as sac_networks
-from brax.training.types import Params
-from brax.training.types import PRNGKey
+from brax.training.types import Params, PRNGKey
 
 import flax
 import jax
