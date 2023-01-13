@@ -381,13 +381,7 @@ def main() -> None:
 
 	ax.plot(xdata, ydata, label="PPO")
 	ax.legend()
-	plt.show()
-	fig, ax = plt.subplots()
-	plt.plot(xdata, ydata)
-	plt.xlabel('Steps')
-	plt.ylabel('Reward')
-	plt.savefig('ppo.png')
-
+	plt.savefig('ppo_training.png')
 
 	# Save the trained model.
 	output_model_path = join(getcwd(), "ppo_params")
