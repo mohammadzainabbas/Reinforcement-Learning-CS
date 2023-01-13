@@ -333,7 +333,6 @@ def main() -> None:
 		times.append(datetime.now())
 		xdata.append(num_steps)
 		ydata.append(metrics['eval/episode_reward'])
-		clear_output(wait=True)
 		plt.xlim([0, train_fn.keywords['num_timesteps']])
 		plt.ylim([min_y, max_y])
 		plt.xlabel('# environment steps')
