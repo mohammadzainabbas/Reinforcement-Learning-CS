@@ -6,6 +6,7 @@ from typing import Callable, Optional, Tuple
 from absl import logging
 
 from brax import envs
+from brax import jumpy as jp
 from brax.envs import wrappers
 from brax.training import acting
 from brax.training import gradients
