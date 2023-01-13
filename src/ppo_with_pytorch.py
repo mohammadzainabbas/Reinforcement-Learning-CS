@@ -264,9 +264,7 @@ def train(
 	env.step(action)
 
 	# create the agent
-	policy_layers = [
-			env.observation_space.shape[-1], 64, 64, env.action_space.shape[-1] * 2
-	]
+	policy_layers = [env.observation_space.shape[-1], 64, 64, env.action_space.shape[-1] * 2]
 	value_layers = [env.observation_space.shape[-1], 64, 64, 1]
 	agent = PPOAgent(policy_layers, value_layers, entropy_cost, discounting,
 								reward_scaling, device)
