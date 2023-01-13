@@ -337,20 +337,20 @@ def main() -> None:
 
 	train_fn = functools.partial(
 		train, 
-		num_timesteps=600_000_000, 
-		num_evals=10, 
-		reward_scaling=10, 
-		episode_length=1000, 
-		normalize_observations=True, 
-		action_repeat=1, 
-		unroll_length=20, 
-		num_minibatches=32, 
-		num_updates_per_batch=2, 
-		discounting=0.99, 
-		learning_rate=3e-4, 
-		entropy_cost=0.001, 
-		num_envs=2048, 
-		batch_size=256)
+		num_timesteps=600_000_000,
+		num_evals=10,
+		reward_scaling=10,
+		episode_length=1000,
+		normalize_observations=True,
+		action_repeat=1,
+		discounting=0.997,
+		learning_rate=3e-4,
+		num_envs=128,
+		batch_size=512,
+		grad_updates_per_step=64,
+		max_devices_per_host=1,
+		max_replay_size=1048576,
+		min_replay_size=8192)
 
 	max_y, min_y = 100, 0
 	xdata, ydata = [], []
