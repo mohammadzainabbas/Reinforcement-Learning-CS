@@ -386,7 +386,8 @@ def main() -> None:
 		act, _ = jit_inference_fn(state.obs, act_rng)
 		state = jit_env_step(state, act)
 
-	HTML(html.render(env.sys, [s.qp for s in rollout]))
+	html_result = html.render(env.sys, [s.qp for s in rollout])
+	with open('ppo.html', 'w') as f:
 	# Run inference.
 	env = envs.get_environment(env_name=ENV_NAME)
 	state = env.reset(rng=jp.random_prngkey(seed=SEED))
