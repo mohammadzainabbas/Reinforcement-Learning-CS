@@ -374,14 +374,12 @@ def main() -> None:
 	# Save plot
 	fig, ax = plt.subplots()
 
-	plt.xlim([0, ppo_train_fn.keywords['num_timesteps']])
+	plt.xlim([0, train_fn.keywords['num_timesteps']])
 	plt.ylim([min_y, max_y])
 	plt.xlabel('# environment steps')
 	plt.ylabel('reward per episode')
 
-	ax.plot(ppo_xdata, ppo_ydata, label="PPO")
-	ax.plot(es_xdata, es_ydata, label="ES")
-	ax.plot(ars_xdata, ars_ydata, label="ARS")
+	ax.plot(xdata, ydata, label="PPO")
 	ax.legend()
 	plt.show()
 	fig, ax = plt.subplots()
