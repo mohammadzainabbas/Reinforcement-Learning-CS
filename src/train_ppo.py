@@ -372,7 +372,7 @@ def main() -> None:
 	print(f'Time to train: {times[-1] - times[1]}')
 
 	# Save plot
-	fig, ax = plt.subplots()
+	_, ax = plt.subplots()
 
 	plt.xlim([0, train_fn.keywords['num_timesteps']])
 	plt.ylim([min_y, max_y])
