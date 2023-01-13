@@ -15,13 +15,8 @@ from brax import jumpy as jp
 from brax.envs import wrappers
 from brax.io import model
 from brax.io import html
-from brax.training import acting
-from brax.training import gradients
-from brax.training import pmap
-from brax.training import replay_buffers
-from brax.training import types
-from brax.training.acme import running_statistics
-from brax.training.acme import specs
+from brax.training import acting, gradients, pmap, replay_buffers, types
+from brax.training.acme import running_statistics, specs
 from brax.training.agents.sac import losses as sac_losses
 from brax.training.agents.sac import networks as sac_networks
 from brax.training.types import Params
