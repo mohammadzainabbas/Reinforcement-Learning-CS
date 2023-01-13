@@ -83,9 +83,11 @@ def train(
 	progress_fn: Callable[[int, Metrics], None] = lambda *args: None,
 	normalize_advantage: bool = True,
 	eval_env: Optional[envs.Env] = None):
-	"""PPO training."""
-  	assert batch_size * num_minibatches % num_envs == 0
-  	xt = time.time()
+	"""
+	PPO training.
+	"""
+	assert batch_size * num_minibatches % num_envs == 0
+	xt = time.time()
 
 	process_count = jax.process_count()
 	process_id = jax.process_index()
