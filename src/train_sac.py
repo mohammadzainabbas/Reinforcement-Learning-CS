@@ -31,30 +31,6 @@ import jax
 import jax.numpy as jnp
 import optax
 
-import functools
-import time
-from typing import Any, Callable, Optional, Tuple
-
-from absl import logging
-from brax import envs
-from brax.envs import wrappers
-from brax.io import model
-from brax.training import acting
-from brax.training import gradients
-from brax.training import pmap
-from brax.training import replay_buffers
-from brax.training import types
-from brax.training.acme import running_statistics
-from brax.training.acme import specs
-from brax.training.agents.sac import losses as sac_losses
-from brax.training.agents.sac import networks as sac_networks
-from brax.training.types import Params
-from brax.training.types import PRNGKey
-import flax
-import jax
-import jax.numpy as jnp
-import optax
-
 Metrics = types.Metrics
 Transition = types.Transition
 InferenceParams = Tuple[running_statistics.NestedMeanStd, Params]
@@ -62,7 +38,6 @@ InferenceParams = Tuple[running_statistics.NestedMeanStd, Params]
 ReplayBufferState = Any
 
 _PMAP_AXIS_NAME = 'i'
-
 
 @flax.struct.dataclass
 class TrainingState:
