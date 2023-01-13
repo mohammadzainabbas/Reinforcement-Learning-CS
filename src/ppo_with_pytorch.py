@@ -349,3 +349,34 @@ def train(
 		sps = num_epochs * num_steps / duration
 	
 	return agent, env
+
+def main() -> None:
+	xdata = []
+	ydata = []
+	eval_sps = []
+	train_sps = []
+	times = [datetime.now()]
+
+	def progress(num_steps, metrics):
+		times.append(datetime.now())
+		xdata.append(num_steps)
+		# copy to cpu, otherwise matplotlib throws an exception
+		reward = metrics['eval/episode_reward'].cpu()
+		ydata.append(reward)
+		eval_sps.append(metrics['speed/eval_sps'])
+		train_sps.append(metrics['speed/sps'])
+		clear_output(wait=True)
+		plt.xlim([0, 30_000_000])
+		plt.ylim([0, 6000])
+		plt.xlabel('# environment steps')
+		plt.ylabel('reward per episode')
+		plt.plot(xdata, ydata)
+		plt.show()
+
+	agent, env = train(progress_fn=progress)
+
+	print(f'time to jit: {times[1] - times[0]}')
+	print(f'time to train: {times[-1] - times[1]}')
+	print(f'eval steps/sec: {np.mean(eval_sps[1:])}')
+	print(f'train steps/sec: {np.mean(train_sps[1:])}')
+	# !nvidia-smi -L
