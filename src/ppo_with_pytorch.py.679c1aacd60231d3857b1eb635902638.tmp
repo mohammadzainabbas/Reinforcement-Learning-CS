@@ -122,8 +122,7 @@ class PPOAgent(nn.Module):
 		truncation_mask = 1 - truncation
 		# Append bootstrapped value to get [v1, ..., v_t+1]
 		values_t_plus_1 = torch.cat([values[1:], torch.unsqueeze(bootstrap_value, 0)], dim=0)
-		deltas = reward + self.discounting * (
-			1 - termination) * values_t_plus_1 - values
+		deltas = reward + self.discounting * (1 - termination) * values_t_plus_1 - values
 		deltas *= truncation_mask
 
 		acc = torch.zeros_like(bootstrap_value)
@@ -131,15 +130,13 @@ class PPOAgent(nn.Module):
 
 		for ti in range(truncation_mask.shape[0]):
 			ti = truncation_mask.shape[0] - ti - 1
-			acc = deltas[ti] + self.discounting * (
-				1 - termination[ti]) * truncation_mask[ti] * self.lambda_ * acc
+			acc = deltas[ti] + self.discounting * (1 - termination[ti]) * truncation_mask[ti] * self.lambda_ * acc
 			vs_minus_v_xs[ti] = acc
 
 		# Add V(x_s) to get v_s.
 		vs = vs_minus_v_xs + values
 		vs_t_plus_1 = torch.cat([vs[1:], torch.unsqueeze(bootstrap_value, 0)], 0)
-		advantages = (reward + self.discounting *
-					(1 - termination) * vs_t_plus_1 - values) * truncation_mask
+		advantages = (reward + self.discounting * (1 - termination) * vs_t_plus_1 - values) * truncation_mask
 		return vs, advantages
 
 	@torch.jit.export
