@@ -283,12 +283,12 @@ def train(
 			episode_avg_length = env.num_envs * episode_length / episode_count
 			eval_sps = env.num_envs * episode_length / duration
 			progress = {
-					'eval/episode_reward': episode_reward,
-					'eval/completed_episodes': episode_count,
-					'eval/avg_episode_length': episode_avg_length,
-					'speed/sps': sps,
-					'speed/eval_sps': eval_sps,
-					'losses/total_loss': total_loss,
+				'eval/episode_reward': episode_reward,
+				'eval/completed_episodes': episode_count,
+				'eval/avg_episode_length': episode_avg_length,
+				'speed/sps': sps,
+				'speed/eval_sps': eval_sps,
+				'losses/total_loss': total_loss,
 			}
 			progress_fn(total_steps, progress)
 
