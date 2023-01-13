@@ -287,9 +287,7 @@ def train(
 		transitions = jax.tree_util.tree_map(
 			lambda x: jnp.reshape(x, (grad_updates_per_step, -1) + x.shape[1:]),
 			transitions)
-		(training_state, _), metrics = jax.lax.scan(sgd_step,
-													(training_state, training_key),
-													transitions)
+		(training_state, _), metrics = jax.lax.scan(sgd_step, (training_state, training_key), transitions)
 
 		metrics['buffer_current_size'] = buffer_state.current_size
 		metrics['buffer_current_position'] = buffer_state.current_position
