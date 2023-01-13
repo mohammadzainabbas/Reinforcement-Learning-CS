@@ -404,7 +404,7 @@ def main() -> None:
 		state = jit_env_step(state, act)
 
 	html_result = html.render(env.sys, [s.qp for s in rollout])
-	with open('result_with_ppo.html', 'w') as f:
+	with open('result_with_sac.html', 'w') as f:
 		f.write(html_result)
 
 if __name__ == '__main__':
