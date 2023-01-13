@@ -117,7 +117,7 @@ def train(
 	Soft Actor-Critic training.
 
 	See: https://arxiv.org/pdf/1812.05905.pdf
-		"""
+	"""
 	process_id = jax.process_index()
 	local_devices_to_use = jax.local_device_count()
 	if max_devices_per_host is not None:
