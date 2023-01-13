@@ -338,3 +338,6 @@ def train(environment: envs.Env,
   logging.info('total steps: %s', total_steps)
   pmap.synchronize_hosts()
   return (make_policy, params, metrics)
+
+if __name__ == '__main__':
+	
