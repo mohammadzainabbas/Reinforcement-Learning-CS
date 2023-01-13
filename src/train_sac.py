@@ -433,12 +433,12 @@ def train(
 
 		# Eval and logging
 		if process_id == 0:
-		if checkpoint_logdir:
-			# Save current policy.
-			params = _unpmap(
-				(training_state.normalizer_params, training_state.policy_params))
-			path = f'{checkpoint_logdir}_sac_{current_step}.pkl'
-			model.save_params(path, params)
+			if checkpoint_logdir:
+				# Save current policy.
+				params = _unpmap(
+					(training_state.normalizer_params, training_state.policy_params))
+				path = f'{checkpoint_logdir}_sac_{current_step}.pkl'
+				model.save_params(path, params)
 
 		# Run evals.
 		metrics = evaluator.run_evaluation(
