@@ -358,7 +358,9 @@ def main() -> None:
 		xdata.append(num_steps)
 		ydata.append(metrics['eval/episode_reward'])
 	
+	make_inference_fn, params, metrics = train_fn(environment=env, progress_fn=progress)
 
+	
 
 
 
