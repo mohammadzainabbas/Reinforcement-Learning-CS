@@ -371,13 +371,13 @@ def main() -> None:
 
 	inference_fn = make_inference_fn(params)
 
-	# Run inference.
-	# env = envs.get_environment(env_name=ENV_NAME)
-	# state = env.reset(rng=jp.random_prngkey(seed=SEED))
-	# for _ in range(1000):
-	# 	action = inference_fn(state)
-	# 	state, reward, done, _ = env.step(action)
-	# 	env.render()
+#	Run inference.
+	env = envs.get_environment(env_name=ENV_NAME)
+	state = env.reset(rng=jp.random_prngkey(seed=SEED))
+	for _ in range(1000):
+		action = inference_fn(state)
+		state, reward, done, _ = env.step(action)
+		env.render()
 
 if __name__ == '__main__':
 	main()
