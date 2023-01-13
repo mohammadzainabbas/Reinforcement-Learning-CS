@@ -96,35 +96,35 @@ def _init_training_state(
 
 	return jax.device_put_replicated(training_state, jax.local_devices()[:local_devices_to_use])
 
-def train(environment: envs.Env,
-          num_timesteps,
-          episode_length: int,
-          action_repeat: int = 1,
-          num_envs: int = 1,
-          num_eval_envs: int = 128,
-          learning_rate: float = 1e-4,
-          discounting: float = 0.9,
-          seed: int = 0,
-          batch_size: int = 256,
-          num_evals: int = 1,
-          normalize_observations: bool = False,
-          max_devices_per_host: Optional[int] = None,
-          reward_scaling: float = 1.,
-          tau: float = 0.005,
-          min_replay_size: int = 0,
-          max_replay_size: Optional[int] = None,
-          grad_updates_per_step: int = 1,
-          deterministic_eval: bool = False,
-          network_factory: types.NetworkFactory[
-              sac_networks.SACNetworks] = sac_networks.make_sac_networks,
-          progress_fn: Callable[[int, Metrics], None] = lambda *args: None,
-          checkpoint_logdir: Optional[str] = None,
-          eval_env: Optional[envs.Env] = None):
-"""
-Soft Actor-Critic training.
+def train(
+	environment: envs.Env,
+	num_timesteps,
+	episode_length: int,
+	action_repeat: int = 1,
+	num_envs: int = 1,
+	num_eval_envs: int = 128,
+	learning_rate: float = 1e-4,
+	discounting: float = 0.9,
+	seed: int = 0,
+	batch_size: int = 256,
+	num_evals: int = 1,
+	normalize_observations: bool = False,
+	max_devices_per_host: Optional[int] = None,
+	reward_scaling: float = 1.,
+	tau: float = 0.005,
+	min_replay_size: int = 0,
+	max_replay_size: Optional[int] = None,
+	grad_updates_per_step: int = 1,
+	deterministic_eval: bool = False,
+	network_factory: types.NetworkFactory[sac_networks.SACNetworks] = sac_networks.make_sac_networks,
+	progress_fn: Callable[[int, Metrics], None] = lambda *args: None,
+	checkpoint_logdir: Optional[str] = None,
+	eval_env: Optional[envs.Env] = None):
+	"""
+	Soft Actor-Critic training.
 
-See: https://arxiv.org/pdf/1812.05905.pdf
-"""
+	See: https://arxiv.org/pdf/1812.05905.pdf
+	"""
   process_id = jax.process_index()
   local_devices_to_use = jax.local_device_count()
   if max_devices_per_host is not None:

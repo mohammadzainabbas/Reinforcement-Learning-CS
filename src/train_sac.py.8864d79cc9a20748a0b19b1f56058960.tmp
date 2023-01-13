@@ -116,16 +116,15 @@ def train(
 	max_replay_size: Optional[int] = None,
 	grad_updates_per_step: int = 1,
 	deterministic_eval: bool = False,
-	network_factory: types.NetworkFactory[
-		sac_networks.SACNetworks] = sac_networks.make_sac_networks,
+	network_factory: types.NetworkFactory[sac_networks.SACNetworks] = sac_networks.make_sac_networks,
 	progress_fn: Callable[[int, Metrics], None] = lambda *args: None,
 	checkpoint_logdir: Optional[str] = None,
 	eval_env: Optional[envs.Env] = None):
-"""
-Soft Actor-Critic training.
+	"""
+	Soft Actor-Critic training.
 
-See: https://arxiv.org/pdf/1812.05905.pdf
-"""
+	See: https://arxiv.org/pdf/1812.05905.pdf
+	"""
   process_id = jax.process_index()
   local_devices_to_use = jax.local_device_count()
   if max_devices_per_host is not None:
