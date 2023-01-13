@@ -68,32 +68,33 @@ def _init_training_state(
     alpha_optimizer: optax.GradientTransformation,
     policy_optimizer: optax.GradientTransformation,
     q_optimizer: optax.GradientTransformation) -> TrainingState:
-  """Inits the training state and replicates it over devices."""
-  key_policy, key_q = jax.random.split(key)
-  log_alpha = jnp.asarray(0., dtype=jnp.float32)
-  alpha_optimizer_state = alpha_optimizer.init(log_alpha)
 
-  policy_params = sac_network.policy_network.init(key_policy)
-  policy_optimizer_state = policy_optimizer.init(policy_params)
-  q_params = sac_network.q_network.init(key_q)
-  q_optimizer_state = q_optimizer.init(q_params)
+	"""Inits the training state and replicates it over devices."""
+	key_policy, key_q = jax.random.split(key)
+	log_alpha = jnp.asarray(0., dtype=jnp.float32)
+	alpha_optimizer_state = alpha_optimizer.init(log_alpha)
 
-  normalizer_params = running_statistics.init_state(
-      specs.Array((obs_size,), jnp.float32))
+	policy_params = sac_network.policy_network.init(key_policy)
+	policy_optimizer_state = policy_optimizer.init(policy_params)
+	q_params = sac_network.q_network.init(key_q)
+	q_optimizer_state = q_optimizer.init(q_params)
 
-  training_state = TrainingState(
-      policy_optimizer_state=policy_optimizer_state,
-      policy_params=policy_params,
-      q_optimizer_state=q_optimizer_state,
-      q_params=q_params,
-      target_q_params=q_params,
-      gradient_steps=jnp.zeros(()),
-      env_steps=jnp.zeros(()),
-      alpha_optimizer_state=alpha_optimizer_state,
-      alpha_params=log_alpha,
-      normalizer_params=normalizer_params)
-  return jax.device_put_replicated(training_state,
-                                   jax.local_devices()[:local_devices_to_use])
+	normalizer_params = running_statistics.init_state(
+		specs.Array((obs_size,), jnp.float32))
+
+	training_state = TrainingState(
+		policy_optimizer_state=policy_optimizer_state,
+		policy_params=policy_params,
+		q_optimizer_state=q_optimizer_state,
+		q_params=q_params,
+		target_q_params=q_params,
+		gradient_steps=jnp.zeros(()),
+		env_steps=jnp.zeros(()),
+		alpha_optimizer_state=alpha_optimizer_state,
+		alpha_params=log_alpha,
+		normalizer_params=normalizer_params)
+	return jax.device_put_replicated(training_state,
+									jax.local_devices()[:local_devices_to_use])
 
 
 def train(environment: envs.Env,
