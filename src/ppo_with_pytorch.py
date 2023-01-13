@@ -164,6 +164,7 @@ class PPOAgent(nn.Module):
 				reward=reward,
 				values=baseline,
 				bootstrap_value=bootstrap_value)
+
 		rho_s = torch.exp(target_action_log_probs - behaviour_action_log_probs)
 		surrogate_loss1 = rho_s * advantages
 		surrogate_loss2 = rho_s.clip(1 - self.epsilon,
