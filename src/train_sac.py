@@ -318,13 +318,13 @@ def train(
 		current_step = int(_unpmap(training_state.env_steps))
 
 		if process_id == 0:
-		# Run evals.
-		metrics = evaluator.run_evaluation(
-			_unpmap(
-				(training_state.normalizer_params, training_state.params.policy)),
-			training_metrics)
-		logging.info(metrics)
-		progress_fn(current_step, metrics)
+			# Run evals.
+			metrics = evaluator.run_evaluation(
+				_unpmap(
+					(training_state.normalizer_params, training_state.params.policy)),
+				training_metrics)
+			logging.info(metrics)
+			progress_fn(current_step, metrics)
 
 	total_steps = current_step
 	assert total_steps >= num_timesteps
