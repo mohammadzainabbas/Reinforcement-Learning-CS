@@ -148,8 +148,7 @@ def train(
 
 	assert num_envs % device_count == 0
 	env = environment
-	env = wrappers.wrap_for_training(
-		env, episode_length=episode_length, action_repeat=action_repeat)
+	env = wrappers.wrap_for_training(env, episode_length=episode_length, action_repeat=action_repeat)
 
 	obs_size = env.observation_size
 	action_size = env.action_size
