@@ -351,8 +351,7 @@ def train(
 	return agent, env
 
 def main() -> None:
-	xdata, ydata, eval_sps, train_sps = [], [], [], []
-	times = [datetime.now()]
+	xdata, ydata, eval_sps, train_sps, times = [], [], [], [], [datetime.now()]
 
 	def progress(num_steps, metrics):
 		times.append(datetime.now())
@@ -362,7 +361,7 @@ def main() -> None:
 		ydata.append(reward)
 		eval_sps.append(metrics['speed/eval_sps'])
 		train_sps.append(metrics['speed/sps'])
-		clear_output(wait=True)
+		
 		plt.xlim([0, 30_000_000])
 		plt.ylim([0, 6000])
 		plt.xlabel('# environment steps')
