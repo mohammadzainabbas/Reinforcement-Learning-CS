@@ -371,7 +371,7 @@ def main() -> None:
 
 	inference_fn = make_inference_fn(params)
 
-#	Run inference.
+	# Run inference.
 	env = envs.get_environment(env_name=ENV_NAME)
 	state = env.reset(rng=jp.random_prngkey(seed=SEED))
 	for _ in range(1000):
