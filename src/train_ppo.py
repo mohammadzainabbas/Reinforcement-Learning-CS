@@ -366,8 +366,8 @@ def main() -> None:
 	# Run training.
 	make_inference_fn, params, metrics = train_fn(environment=env, progress_fn=progress)
 
-	print(f'time to jit: {times[1] - times[0]}')
-	print(f'time to train: {times[-1] - times[1]}')
+	print(f'Time to jit: {times[1] - times[0]}')
+	print(f'Time to train: {times[-1] - times[1]}')
 
 	# Save the trained model.
 	output_model_path = join(getcwd(), "ppo_params")
