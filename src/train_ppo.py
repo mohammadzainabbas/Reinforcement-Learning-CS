@@ -328,7 +328,22 @@ def main() -> None:
 	env = envs.get_environment(env_name=ENV_NAME)
 	state = env.reset(rng=jp.random_prngkey(seed=SEED))
 
-	train_fn = functools.partial(train, num_timesteps=600_000_000, num_evals=10, reward_scaling=10, episode_length=1000, normalize_observations=True, action_repeat=1, unroll_length=20, num_minibatches=32, num_updates_per_batch=2, discounting=0.99, learning_rate=3e-4, entropy_cost=0.001, num_envs=2048, batch_size=256)
+	train_fn = functools.partial(
+		train, 
+		num_timesteps=600_000_000, 
+		num_evals=10, 
+		reward_scaling=10, 
+		episode_length=1000, 
+		normalize_observations=True, 
+		action_repeat=1, 
+		unroll_length=20, 
+		num_minibatches=32, 
+		num_updates_per_batch=2, 
+		discounting=0.99, 
+		learning_rate=3e-4, 
+		entropy_cost=0.001, 
+		num_envs=2048, 
+		batch_size=256)
 
 	max_y, min_y = 100, 0
 	xdata, ydata = [], []
