@@ -16,15 +16,12 @@ from brax.training.agents.ppo import losses as ppo_losses
 from brax.training.agents.ppo import networks as ppo_networks
 from brax.training.types import Params
 from brax.training.types import PRNGKey
+
 import flax
 import jax
 import jax.numpy as jnp
 import optax
 
-"""Proximal policy optimization training.
-
-See: https://arxiv.org/pdf/1707.06347.pdf
-"""
 InferenceParams = Tuple[running_statistics.NestedMeanStd, Params]
 Metrics = types.Metrics
 
@@ -38,10 +35,8 @@ class TrainingState:
 	normalizer_params: running_statistics.RunningStatisticsState
 	env_steps: jnp.ndarray
 
-
 def _unpmap(v):
 	return jax.tree_util.tree_map(lambda x: x[0], v)
-
 
 def train(
 	environment: envs.Env,
