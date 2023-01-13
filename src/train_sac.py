@@ -55,7 +55,6 @@ def _unpmap(v):
 	"""
 	return jax.tree_util.tree_map(lambda x: x[0], v)
 
-
 def _init_training_state(
     key: PRNGKey, obs_size: int, local_devices_to_use: int,
     sac_network: sac_networks.SACNetworks,
