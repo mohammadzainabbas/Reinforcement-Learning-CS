@@ -102,19 +102,16 @@ def train(
 	device_count = local_devices_to_use * process_count
 
 	# The number of environment steps executed for every training step.
-	env_step_per_training_step = (
-		batch_size * unroll_length * num_minibatches * action_repeat)
+	env_step_per_training_step = (batch_size * unroll_length * num_minibatches * action_repeat)
 	num_evals_after_init = max(num_evals - 1, 1)
 	# The number of training_step calls per training_epoch call.
 	# equals to ceil(num_timesteps / (num_evals * env_step_per_training_step))
-	num_training_steps_per_epoch = -(
-		-num_timesteps // (num_evals_after_init * env_step_per_training_step))
+	num_training_steps_per_epoch = -(-num_timesteps // (num_evals_after_init * env_step_per_training_step))
 
 	assert num_envs % device_count == 0
 	env = environment
 
-	env = wrappers.wrap_for_training(
-		env, episode_length=episode_length, action_repeat=action_repeat)
+	env = wrappers.wrap_for_training(env, episode_length=episode_length, action_repeat=action_repeat)
 
 	reset_fn = jax.jit(jax.vmap(env.reset))
 
