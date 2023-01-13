@@ -12,6 +12,7 @@ from brax import envs
 from brax import jumpy as jp
 from brax.envs import wrappers
 from brax.io import model
+from brax.io import html
 from brax.training import acting
 from brax.training import gradients
 from brax.training import pmap
@@ -385,7 +386,7 @@ def main() -> None:
 		act, _ = jit_inference_fn(state.obs, act_rng)
 		state = jit_env_step(state, act)
 
-HTML(html.render(env.sys, [s.qp for s in rollout]))
+	HTML(html.render(env.sys, [s.qp for s in rollout]))
 	# Run inference.
 	env = envs.get_environment(env_name=ENV_NAME)
 	state = env.reset(rng=jp.random_prngkey(seed=SEED))
