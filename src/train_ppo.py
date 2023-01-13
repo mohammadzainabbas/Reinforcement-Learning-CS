@@ -376,6 +376,16 @@ def main() -> None:
 	jit_env_step = jax.jit(env.step)
 	jit_inference_fn = jax.jit(inference_fn)
 
+	rollout = []
+	rng = jax.random.PRNGKey(seed=SEED)
+	state = jit_env_reset(rng=rng)
+	for _ in range(1000):
+		rollout.append(state)
+		act_rng, rng = jax.random.split(rng)
+		act, _ = jit_inference_fn(state.obs, act_rng)
+		state = jit_env_step(state, act)
+
+HTML(html.render(env.sys, [s.qp for s in rollout]))
 	# Run inference.
 	env = envs.get_environment(env_name=ENV_NAME)
 	state = env.reset(rng=jp.random_prngkey(seed=SEED))
