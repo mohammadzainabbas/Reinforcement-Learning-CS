@@ -299,16 +299,16 @@ def train(
 	) -> Tuple[TrainingState, envs.State, ReplayBufferState, PRNGKey]:
 
 		def f(carry, unused):
-		del unused
-		training_state, env_state, buffer_state, key = carry
-		key, new_key = jax.random.split(key)
-		new_normalizer_params, env_state, buffer_state = get_experience(
-			training_state.normalizer_params, training_state.policy_params,
-			env_state, buffer_state, key)
-		new_training_state = training_state.replace(
-			normalizer_params=new_normalizer_params,
-			env_steps=training_state.env_steps + env_steps_per_actor_step)
-		return (new_training_state, env_state, buffer_state, new_key), ()
+			del unused
+			training_state, env_state, buffer_state, key = carry
+			key, new_key = jax.random.split(key)
+			new_normalizer_params, env_state, buffer_state = get_experience(
+				training_state.normalizer_params, training_state.policy_params,
+				env_state, buffer_state, key)
+			new_training_state = training_state.replace(
+				normalizer_params=new_normalizer_params,
+				env_steps=training_state.env_steps + env_steps_per_actor_step)
+			return (new_training_state, env_state, buffer_state, new_key), ()
 
 		return jax.lax.scan(
 			f, (training_state, env_state, buffer_state, key), (),
