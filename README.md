@@ -1,7 +1,10 @@
-## 💡 Reinforcement Learning 👨🏻‍💻
+## 💡 Reinforcement Learning: Grasp - Pick-and-place with a robotic hand 👨🏻‍💻
 
 ### Table of contents
 
+- [👨🏻‍💻 Introduction](#introduction)
+- [e Getting started](#getting-started)
+- [👨🏻‍💻 Introduction](#introduction)
 - [👨🏻‍💻 Introduction](#introduction)
 
 #
