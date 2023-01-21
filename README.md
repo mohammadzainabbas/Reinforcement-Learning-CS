@@ -2,9 +2,9 @@
 
 ### Table of contents
 
-- [👨🏻‍💻 Introduction](#introduction)
-- [🚀 Getting started](#getting-started)
-	* [⚙️ Prerequisites](#prerequisites)
+- [👨🏻‍💻 Introduction 👨🏻‍💻](#introduction)
+- [🚀 Getting started 🚀](#getting-started)
+	* [⚙️ Prerequisites ⚙️](#prerequisites)
 	* [📦 Installation](#installation)
 	* [📦 Usage](#usage)
 - [👨🏻‍💻 Introduction](#introduction)
