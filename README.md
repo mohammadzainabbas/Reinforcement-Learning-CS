@@ -72,7 +72,8 @@ Or you can run the `train_ppo.py` file locally by following the steps below:
 python src/train_ppo.py
 ```
 
-You'd get the following two output files:
+You will get the following output files:
 
 1. `ppo_training.png` - Training progress plot
 2. `result_with_ppo.html` - Simulation of the trained agent (in HTML format)
+3. `result_with_ppo.mp4` - Simulation of the trained agent (in MP4 format)
