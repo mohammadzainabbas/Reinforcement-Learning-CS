@@ -63,7 +63,7 @@ pip install -r requirements.txt
 
 #### 2.3. 🏃‍♂️ Running Demo(s) 🏃‍♂️
 
-
+- [x] [Grasp - Pick-and-place with a robotic hand](#grasp-pick-and-place-with-a-robotic-hand)
 
 1. Run the demo
 
