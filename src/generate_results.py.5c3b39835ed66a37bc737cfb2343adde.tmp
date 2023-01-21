@@ -20,7 +20,7 @@ _HTML = """
     var sys_1K = <!-- initial_system -->;
     var sys_5M = <!-- initial_system -->;
     var sys_400M = <!-- initial_system -->;
-    var sys_400M = <!-- initial_system -->;
+    var final_600M = <!-- initial_system -->;
     </script>
     <div id="brax-viewer"></div>
     <script type="module">
