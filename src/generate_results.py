@@ -16,7 +16,7 @@ _HTML = """
   </head>
   <body>
     <script type="application/javascript">
-    var system = <!-- system json goes here -->;
+    var initial_system = <!-- system json goes here -->;
     </script>
     <div id="brax-viewer"></div>
     <script type="module">
