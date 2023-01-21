@@ -35,5 +35,6 @@ These instructions will get you a copy of the project up and running on your loc
 - [x] Python 3.7 or higher
 - [x] Brax 0.1.0 or higher
 - [x] Jax 0.4.1 or higher
+- [x] PyTorch 1.13.1 or higher
 - [x] Gym 0.18.3
 - [x] Stable Baselines 3
