@@ -7,7 +7,7 @@
 	* [⚙️ Prerequisites ⚙️](#prerequisites)
 	* [🔧 Installation 🔧](#installation)
 	* [🏃‍♂️ Running Demo(s) 🏃‍♂️](#running-demos)
-	* [🏃‍♂️ Running Demo(s) 🏃‍♂️](#usage)
+	* [🎉 Results 🎉](#results)
 - [👨🏻‍💻 Introduction](#introduction)
 - [👨🏻‍💻 Introduction](#introduction)
 
