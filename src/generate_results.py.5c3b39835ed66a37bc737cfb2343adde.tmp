@@ -10,13 +10,13 @@ _HTML = """
       #brax-viewer {
         margin: 0;
         padding: 0;
-        height: <!-- viewer height goes here -->;
+        height: 100vh;
       }
     </style>
   </head>
   <body>
     <script type="application/javascript">
-    var system = <!-- system json goes here -->;
+    var initial_system = <!-- system json goes here -->;
     </script>
     <div id="brax-viewer"></div>
     <script type="module">

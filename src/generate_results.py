@@ -1,7 +1,7 @@
 _HTML = """
 <html>
   <head>
-    <title>brax visualizer</title>
+    <title>Grasp - Pick-and-place robotic hand (Visualisation)</title>
     <style>
       body {
         margin: 0;
@@ -10,7 +10,7 @@ _HTML = """
       #brax-viewer {
         margin: 0;
         padding: 0;
-        height: <!-- viewer height goes here -->;
+        height: 100vh;
       }
     </style>
   </head>
