@@ -17,10 +17,10 @@ _HTML = """
   <body>
     <script type="application/javascript">
     var initial_system = <!-- initial_system -->;
-    var sys_1K = <!-- initial_system -->;
-    var sys_5M = <!-- initial_system -->;
-    var sys_400M = <!-- initial_system -->;
-    var sys_400M = <!-- initial_system -->;
+    var sys_1K = <!-- sys_1K -->;
+    var sys_5M = <!-- sys_5M -->;
+    var sys_400M = <!-- sys_400M -->;
+    var final_600M = <!-- final_600M -->;
     </script>
     <div id="brax-viewer"></div>
     <script type="module">
