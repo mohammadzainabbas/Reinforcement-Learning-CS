@@ -77,3 +77,13 @@ You will get the following output files:
 1. `ppo_training.png` - Training progress plot
 2. `result_with_ppo.html` - Simulation of the trained agent (in HTML format)
 3. `ppo_params` - Trained parameters of the agent
+
+#
+
+<a id="results" />
+
+#### 2.4. 🎉 Results 🎉
+
+The following plot shows the training progress of the agent:
+
+![Training progress plot](
