@@ -2,18 +2,28 @@
 
 ### Table of contents
 
-- [👨🏻‍💻 Introduction](#introduction)
-- [e Getting started](#getting-started)
-- [👨🏻‍💻 Introduction](#introduction)
-- [👨🏻‍💻 Introduction](#introduction)
+- [👨🏻‍💻 Introduction 👨🏻‍💻](#introduction)
+- [🚀 Getting started 🚀](#getting-started)
+	* [⚙️ Prerequisites ⚙️](#prerequisites)
+	* [🔧 Installation 🔧](#installation)
+	* [🏃‍♂️ Running Demo(s) 🏃‍♂️](#running-demos)
+	* [🎉 Results 🎉](#results)
+- [🛠 Built With 🛠](#built-with)
 
 #
 
 <a id="introduction" />
 
-### 1. 👨🏻‍💻 Introduction
+### 1. 👨🏻‍💻 Introduction 👨🏻‍💻
 
-This project is a part of the course __Reinforcement Learning__ at CentraleSupélec. The goal of this project is to implement a reinforcement learning algorithm to solve a problem.
+This repository contains the code and resources for a reinforcement learning project where we trained a robotic hand to grasp a moving ball and move it to a certain target location using PPO algorithm and using Brax physics simulation engine.
 
 #
+
+<a id="getting-started" />
+
+### 2. 🚀 Getting started 🚀
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
 
