@@ -20,7 +20,8 @@
 	<script type="application/javascript">
 		// read from a file
 
-		var system = <!-- system json goes here -->;
+		var system = JSON.parse(fs.readFileSync('../../notebooks/initial.json', 'utf8'));
+		// var system = <!-- system json goes here -->;
 	</script>
 	<div id="brax-viewer"></div>
 	<script type="module">
