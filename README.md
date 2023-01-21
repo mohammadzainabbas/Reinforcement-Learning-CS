@@ -5,8 +5,8 @@
 - [👨🏻‍💻 Introduction 👨🏻‍💻](#introduction)
 - [🚀 Getting started 🚀](#getting-started)
 	* [⚙️ Prerequisites ⚙️](#prerequisites)
-	* [📦 Installation](#installation)
-	* [📦 Usage](#usage)
+	* [🔧 Installation 🔧](#installation)
+	* [🏃‍♂️ Demo 🏃‍♂️](#usage)
 - [👨🏻‍💻 Introduction](#introduction)
 - [👨🏻‍💻 Introduction](#introduction)
 
