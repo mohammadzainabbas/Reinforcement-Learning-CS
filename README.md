@@ -72,3 +72,6 @@ Or you can run the `train_ppo.py` file locally by following the steps below:
 python src/train_ppo.py
 ```
 
+You'd get the following output:
+
+```bash
