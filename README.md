@@ -57,3 +57,16 @@ cd Reinforcement-Learning-CS/
 pip install -r requirements.txt
 ```
 
+#
+
+<a id="running-demos" />
+
+#### 2.3. 🏃‍♂️ Running Demo(s) 🏃‍♂️
+
+1. Run the demo
+
+```bash
+python src/train_ppo.py
+```
+```
+```
