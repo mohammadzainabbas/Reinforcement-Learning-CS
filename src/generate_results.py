@@ -17,7 +17,7 @@ _HTML = """
   <body>
     <script type="application/javascript">
     var initial_system = <!-- initial_system -->;
-    var initial_system = <!-- initial_system -->;
+    var sys_100K = <!-- initial_system -->;
     </script>
     <div id="brax-viewer"></div>
     <script type="module">
