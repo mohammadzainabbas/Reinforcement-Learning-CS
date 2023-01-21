@@ -43,3 +43,8 @@ These instructions will get you a copy of the project up and running on your loc
 <a id="installation" />
 
 #### 2.2. 🔧 Installation 🔧
+
+1. Clone the repository
+
+```bash
+git clone 
