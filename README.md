@@ -86,4 +86,4 @@ You will get the following output files:
 
 The following plot shows the training progress of the agent:
 
-![Training progress plot](
+![Training progress plot](https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/dev/docs/assets/initial.html)
