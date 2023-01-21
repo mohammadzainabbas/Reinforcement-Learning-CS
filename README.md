@@ -6,7 +6,8 @@
 - [🚀 Getting started 🚀](#getting-started)
 	* [⚙️ Prerequisites ⚙️](#prerequisites)
 	* [🔧 Installation 🔧](#installation)
-	* [🏃‍♂️ Demo 🏃‍♂️](#usage)
+	* [🏃‍♂️ Running Demo(s) 🏃‍♂️](#running-demos)
+	* [🏃‍♂️ Running Demo(s) 🏃‍♂️](#usage)
 - [👨🏻‍💻 Introduction](#introduction)
 - [👨🏻‍💻 Introduction](#introduction)
 
