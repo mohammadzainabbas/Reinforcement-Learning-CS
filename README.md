@@ -75,4 +75,4 @@ python src/train_ppo.py
 You'd get the following two output files:
 
 1. `ppo_training.png` - Training progress plot
-2. `ppo_training.mp4` - Training progress video
+2. `result_with_ppo.html` - Simulation of the trained agent (in HTML format)
