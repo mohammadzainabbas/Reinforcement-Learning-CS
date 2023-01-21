@@ -17,3 +17,6 @@ This repository contains the code and resources for a reinforcement learning pro
 
 #
 
+<a id="getting-started" />
+
+### 2.  Getting started
