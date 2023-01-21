@@ -47,4 +47,6 @@ These instructions will get you a copy of the project up and running on your loc
 1. Clone the repository
 
 ```bash
-git clone 
+git clone https://github.com/mohammadzainabbas/Reinforcement-Learning-CS.git
+cd Reinforcement-Learning-CS/
+```
