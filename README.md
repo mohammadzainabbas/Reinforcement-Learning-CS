@@ -8,8 +8,7 @@
 	* [🔧 Installation 🔧](#installation)
 	* [🏃‍♂️ Running Demo(s) 🏃‍♂️](#running-demos)
 	* [🎉 Results 🎉](#results)
-- [👨🏻‍💻 Introduction](#introduction)
-- [👨🏻‍💻 Introduction](#introduction)
+- [🛠 Built With 🛠](#built-with)
 
 #
 
