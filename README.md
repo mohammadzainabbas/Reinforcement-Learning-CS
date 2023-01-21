@@ -3,7 +3,7 @@
 ### Table of contents
 
 - [👨🏻‍💻 Introduction](#introduction)
-- [ Getting started](#getting-started)
+- [🚀 Getting started](#getting-started)
 - [👨🏻‍💻 Introduction](#introduction)
 - [👨🏻‍💻 Introduction](#introduction)
 
