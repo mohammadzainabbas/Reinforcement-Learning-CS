@@ -24,8 +24,14 @@ _HTML = """
     var final_600M = <!-- final_600M -->;
     
 	</script>
-    <div id="brax-viewer"></div>
-    <script type="module">
+
+    <div id="brax-viewer-initial_system"></div>
+    <div id="brax-viewer-sys_1K"></div>
+    <div id="brax-viewer-sys_5M"></div>
+    <div id="brax-viewer-sys_400M"></div>
+    <div id="brax-viewer-final_600M"></div>
+    
+	<script type="module">
       import {Viewer} from 'https://cdn.jsdelivr.net/gh/google/brax@v0.1.0/js/viewer.js';
       const domElement = document.getElementById('brax-viewer');
       var viewer = new Viewer(domElement, system);
