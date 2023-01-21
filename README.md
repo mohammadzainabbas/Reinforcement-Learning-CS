@@ -26,4 +26,14 @@ This repository contains the code and resources for a reinforcement learning pro
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
+#
 
+<a id="prerequisites" />
+
+#### 2.1. ⚙️ Prerequisites ⚙️
+
+- [x] Python 3.7
+- [x] PyTorch 1.8.1
+- [x] Brax 0.0.5
+- [x] Gym 0.18.3
+- [x] Stable Baselines 3
