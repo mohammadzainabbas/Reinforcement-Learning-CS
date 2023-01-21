@@ -50,3 +50,10 @@ These instructions will get you a copy of the project up and running on your loc
 git clone https://github.com/mohammadzainabbas/Reinforcement-Learning-CS.git
 cd Reinforcement-Learning-CS/
 ```
+
+2. Install the requirements
+
+```bash
+pip install -r requirements.txt
+```
+
