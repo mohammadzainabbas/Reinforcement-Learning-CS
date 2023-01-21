@@ -14,7 +14,7 @@
 
 <a id="introduction" />
 
-### 1. 👨🏻‍💻 Introduction
+### 1. 👨🏻‍💻 Introduction 👨🏻‍💻
 
 This repository contains the code and resources for a reinforcement learning project where we trained a robotic hand to grasp a moving ball and move it to a certain target location using PPO algorithm and using Brax physics simulation engine.
 
@@ -22,4 +22,8 @@ This repository contains the code and resources for a reinforcement learning pro
 
 <a id="getting-started" />
 
-### 2.  Getting started
+### 2. 🚀 Getting started 🚀
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+
