@@ -25,6 +25,7 @@ _HTML = """
     
 	</script>
 
+	<h3>Grasp - Pick-and-place robotic hand (Visualisation)</h3>
     <div id="brax-viewer-initial_system"></div>
     <div id="brax-viewer-sys_1K"></div>
     <div id="brax-viewer-sys_5M"></div>
