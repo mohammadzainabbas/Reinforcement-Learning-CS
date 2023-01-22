@@ -171,7 +171,7 @@ We will use the brax’s optimized algorithms: `PPO`, `ES`, `ARS` and `SAC`.
 
 #### 4. 💡 `Soft Actor-Critic (SAC)` 👨🏻‍💻
 
-[`Soft Actor-Critic (SAC)`]() is an off-policy model-free reinforcement framework. The actor aims to maximize expected reward while also maximizing entropy. That is, to succeed at the task while acting as randomly as possible, and that is why it’s called ‘soft’. SAC has better sample efficiency than PPO. 
+[`Soft Actor-Critic (SAC)`](https://arxiv.org/abs/1801.01290) is an off-policy model-free reinforcement framework. The actor aims to maximize expected reward while also maximizing entropy. That is, to succeed at the task while acting as randomly as possible, and that is why it’s called ‘soft’. SAC has better sample efficiency than PPO.
 
 #
 
