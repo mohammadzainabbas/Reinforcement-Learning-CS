@@ -139,9 +139,9 @@ where each minor step approaching the task completeness will be rewarded, while 
 
 The following steps will help you get started with the project.
 
-- [x] [1. 📚 Requirements 📚](#requirements)
-- [x] [2. 📦 Installation 📦](#installation)
-- [x] [3. 🏃‍♂️ Running the demo 🏃‍♂️](#running-demos)
+- [x] [📚 `Requirements` 📚](#requirements)
+- [x] [📦 `Installation` 📦](#installation)
+- [x] [🏃‍♂️ `Running the demo` 🏃‍♂️](#running-demos)
 
 #
 
