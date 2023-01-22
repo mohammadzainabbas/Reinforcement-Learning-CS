@@ -1,5 +1,5 @@
 from json import loads
-from typing import Union, Dict, Any
+from typing import Union
 from pathlib import Path
 from os.path import join
 
@@ -77,7 +77,6 @@ _HTML = """
 </html>
 """
 
-# def read_json(path: Union[str, Path]) -> Dict[str, Any]:
 def read_json(path: Union[str, Path]) -> str:
 	with open(path, "r") as f:
 		return f.read()
