@@ -100,7 +100,7 @@ The action has `19` dimensions, it’s the hand’s position and the joints’ a
 
 #### 2.3. 🏆 Reward 🥇
 
-The reward function goes like the following:
+The [reward function](https://github.com/google/brax/blob/198dee3ac4/brax/envs/grasp.py#L90-L121) is calculated using following equation:
 
 ```math
 \text{reward} = \text{moving to object} + \text{close to object} + \text{touching object} + 5 * \text{target hit} + \text{moving to target}
