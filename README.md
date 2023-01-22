@@ -223,7 +223,7 @@ First, [install `mamba`](https://mamba.readthedocs.io/en/latest/installation.htm
 conda install mamba -n base -c conda-forge
 ```
 
-Then, create a new environment and install all dependencies:
+Then, create a new environment and install all dependencies, and activate it.
 
 ```bash
 mamba env create -n reinforcement_learning -f docs/config/reinforcement_learning_env.yaml
