@@ -215,7 +215,7 @@ conda activate reinforcement_learning
 
 3. Run the code
 
-- [`train_ppo.py`](https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/src/train_ppo.py) - Train the agent using `PPO` algorithm:
+[`train_ppo.py`](https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/src/train_ppo.py) - Train the agent using `PPO` algorithm:
 
 ```bash
 python src/train_ppo.py
@@ -223,8 +223,8 @@ python src/train_ppo.py
 
 You will get the following output files:
 
-`ppo_training.png` - Training progress plot
-`result_with_ppo.html` - Simulation of the trained agent (in HTML format)
-`ppo_params` - Trained parameters of the agent
+* `ppo_training.png` - Training progress plot
+* `result_with_ppo.html` - Simulation of the trained agent (in HTML format)
+* `ppo_params` - Trained parameters of the agent
 
 #
