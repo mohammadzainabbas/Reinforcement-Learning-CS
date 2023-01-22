@@ -244,10 +244,6 @@ python src/generate_results.py
 You can see the live output [here](http://mohammadzainabbas.tech/Reinforcement-Learning-CS/).
 
 
-[`ppo_with_pytorch.py`](https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/src/ppo_with_pytorch.py) - train the reinforcement learning agent using `PPO` algorithm with `PyTorch`:
-
-```bash
-python src/ppo_with_pytorch.py
-```
+[`ppo_with_pytorch.py`](https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/src/ppo_with_pytorch.py) - implementation of `PPO` algorithm with `PyTorch`.
 
 #
