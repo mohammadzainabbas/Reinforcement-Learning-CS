@@ -8,6 +8,9 @@ def read_json(path: Union[str, Path]) -> Dict[str, Any]:
 		return loads(f.read())
 
 def main() -> None:
+	# Read the JSON files
+
+	results_dir = join("results", "json")
 
 	with open("results/initial_system.json", "r") as f:
 		initial_system = loads(f.read())
