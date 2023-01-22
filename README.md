@@ -84,14 +84,15 @@ The environment observes _three_ main bodies: the `Hand`, the `Object`, and the 
 
 When the object reaches the target location, the agent is rewarded. The agent is also given a penalty if the object falls or if the hand collides with any obstacle. The agent's goal is to maximize the reward, which means reaching the target location as quickly and efficiently as possible.
 
-Overall, the observations provided by the Grasp environment are designed to give the agent the information it needs to learn how to control the robotic hand and move the object to the target location. The combination of the Hand, Object, and Target observations allows the agent to learn from the environment and improve its performance over time.
-
+Overall, the observations provided by the [`Grasp environment`](https://github.com/google/brax/blob/198dee3ac4/brax/envs/grasp.py#L25-L1297) are designed to give the agent the information it needs to learn how to control the robotic hand and move the object to the target location. The combination of the Hand, Object, and Target observations allows the agent to learn from the environment and improve its performance over time.
 
 #
 
 <a id="actions" />
 
 #### 2.2. 🏄‍♂️ Actions 🤸‍♂️
+
+
 
 #
 
