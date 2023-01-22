@@ -8,7 +8,7 @@
 	* [🔭 `Observations` 🔍](#observations)
 	* [🏄‍♂️ `Actions` 🤸‍♂️](#actions)
 	* [🏆 `Reward` 🥇](#reward)
-- [🚀 Algorithms 💻](#algorithms)
+- [🔬 Algorithms 💻](#algorithms)
 	* [🔭 `Proximal policy optimization (PPO)` 🔍](#ppo)
 	* [🔭 `Evolution Strategy (ES)` 🔍](#es)
 	* [🔭 `Augmented Random Search (ARS)` 🔍](#ars)
