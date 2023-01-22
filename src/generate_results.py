@@ -11,11 +11,15 @@ def main() -> None:
 	# Read the JSON files
 
 	results_dir = join(Path(__file__).resolve().parents[1], "docs", "results")
+	initial_system = read_json(join(results_dir, "initial_system.json"))
+	sys_1K = read_json(join(results_dir, "sys_1K.json"))
+	sys_5M = read_json(join(results_dir, "sys_5M.json"))
+	sys_400M = read_json(join(results_dir, "sys_400M.json"))
+	final_600M = read_json(join(results_dir, "final_600M.json"))
 
-	print(results_dir)
+	
 
 	# with open("results/initial_system.json", "r") as f:
-	# 	initial_system = loads(f.read())
 
 	# with open("results/sys_1K.json", "r") as f:
 	# 	sys_1K = loads(f.read())
