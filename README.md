@@ -208,7 +208,7 @@ Explore the project easily and quickly through the following _colab_ notebooks:
 
 <a id="getting-started" />
 
-### 4. 🚀 Getting started 🖲️
+### 6. 🚀 Getting started 🖲️
 
 
 
