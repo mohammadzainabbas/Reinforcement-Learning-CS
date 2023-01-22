@@ -17,7 +17,6 @@ You can see the live demo [here](http://mohammadzainabbas.tech/Reinforcement-Lea
 	* [💡 `Augmented Random Search (ARS)` 👨🏻‍💻](#ars)
 	* [💡 `Soft Actor-Critic (SAC)` 👨🏻‍💻](#sac)
 - [🚀 Getting started 🖲️](#getting-started)
-- [🎉 Results 🎉](#results)
 
 #
 
