@@ -72,7 +72,7 @@ In the environment, the robotic hand is represented by a 4-fingered claw, which 
 
 <a id="observations" />
 
-#### 2.1. 🔭 Observations 🔍
+#### 3.1. 🔭 Observations 🔍
 
 The environment observes _three_ main bodies: the `Hand`, the `Object`, and the `Target`. The agent uses these observations to learn how to control the robotic hand and move the object to the target location.
 
@@ -90,7 +90,7 @@ Overall, the observations provided by the [`Grasp environment`](https://github.c
 
 <a id="actions" />
 
-#### 2.2. 🏄‍♂️ Actions 🤸‍♂️
+#### 3.2. 🏄‍♂️ Actions 🤸‍♂️
 
 The action has `19` dimensions, it’s the hand’s position and the joints’ angles, and it is normalized to the `[-1, 1]` as _continuous_ values.
 
@@ -98,7 +98,7 @@ The action has `19` dimensions, it’s the hand’s position and the joints’ a
 
 <a id="reward" />
 
-#### 2.3. 🏆 Reward 🥇
+#### 3.3. 🏆 Reward 🥇
 
 The [reward function](https://github.com/google/brax/blob/198dee3ac4/brax/envs/grasp.py#L90-L121) is calculated using following equation:
 
