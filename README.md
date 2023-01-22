@@ -53,6 +53,13 @@ Each of these engines has its own strengths and weaknesses, and we carefully con
 
 Ultimately, we chose to use [`Brax`](https://github.com/google/brax/) due to [_its highly scalable and parallelizable architecture_](https://ai.googleblog.com/2021/07/speeding-up-reinforcement-learning-with.html), which makes it well-suited for accelerated hardware (XLA backends such as `GPUs` and `TPUs`). This allows us to simulate the grasping task at a high level of realism and detail, while also taking advantage of the increased computational power of modern hardware to speed up the training process.
 
+#
+
+<a id="environment" />
+
+### 3. 🌪 Environment 🦾
+
+
 
 <a id="getting-started" />
 
