@@ -82,8 +82,8 @@ def read_json(path: Union[str, Path]) -> str:
 
 def main() -> None:
 	# Read the JSON files
-	results_dir = join(Path(__file__).resolve().parents[1], "docs")
-	data_dir = join(results_dir, "data")
+	docs_dir = join(Path(__file__).resolve().parents[1], "docs")
+	data_dir = join(docs_dir, "data")
 	
 	initial_system = read_json(join(data_dir, "initial_system.json"))
 	sys_1K = read_json(join(data_dir, "sys_1K.json"))
@@ -92,7 +92,7 @@ def main() -> None:
 	final_600M = read_json(join(data_dir, "final_600M.json"))
 
 	# Write the HTML file
-	with open(join(results_dir, "index.html"), "w") as f:
+	with open(join(docs_dir, "index.html"), "w") as f:
 		f.write(_HTML.replace("<!-- initial_system -->", str(initial_system))
 							.replace("<!-- sys_1K -->", str(sys_1K))
 							.replace("<!-- sys_5M -->", str(sys_5M))
