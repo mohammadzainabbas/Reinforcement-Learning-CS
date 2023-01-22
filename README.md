@@ -99,6 +99,5 @@ You will get the following output files:
 The following plot shows the comparsion between training progress of `Proximal policy optimization (PPO)`, `Evolution Strategy (ES)` and `Augmented Random Search (ARS)` algorithms:
 
 <p align="center">
-  <img src="https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/docs/output.jpeg?raw=true" width="500" height="300">
+  <img src="https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/docs/assets/compare_algorithms.jpeg?raw=true" width="500" height="300">
 </p>
-
