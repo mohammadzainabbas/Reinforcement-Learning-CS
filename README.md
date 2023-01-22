@@ -92,7 +92,7 @@ Overall, the observations provided by the [`Grasp environment`](https://github.c
 
 #### 2.2. 🏄‍♂️ Actions 🤸‍♂️
 
-
+The action has `19` dimensions, it’s the hand’s position and the joints’ angles, and it is normalized to the `[-1, 1]` as _continuous_ values.
 
 #
 
