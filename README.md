@@ -223,8 +223,8 @@ python src/train_ppo.py
 
 You will get the following output files:
 
-* `ppo_training.png` - Training progress plot
-* `result_with_ppo.html` - Simulation of the trained agent (in HTML format)
-* `ppo_params` - Trained parameters of the agent
+`ppo_training.png` - Training progress plot
+`result_with_ppo.html` - Simulation of the trained agent (in HTML format)
+`ppo_params` - Trained parameters of the agent
 
 #
