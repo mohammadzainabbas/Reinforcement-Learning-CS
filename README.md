@@ -44,7 +44,7 @@ The use of a physics simulation engine is essential for training a robotic hand 
 
 In this project, we explored several different physics simulation engines, including [MuJoCo](https://mujoco.org/) ([dm_control](https://github.com/deepmind/dm_control/), [Gym](https://www.gymlibrary.dev/) and [Gymnasium](https://gymnasium.farama.org/)), [TinyDiffSim](https://github.com/erwincoumans/tiny-differentiable-simulator), [DiffTaichi](https://github.com/taichi-dev/difftaichi), [Nimble](https://github.com/keenon/nimblephysics), [PyBullet](https://github.com/bulletphysics/bullet3), and [Brax](https://github.com/google/brax/). Each of these engines has its own strengths and weaknesses, and we carefully considered the trade-offs between them before making a final decision.
 
-Ultimately, we chose to use Brax due to its highly scalable and parallelizable architecture, which makes it well-suited for accelerated hardware (XLA backends such as GPUs and TPUs). This allows us to simulate the grasping task at a high level of realism and detail, while also taking advantage of the increased computational power of modern hardware to speed up the training process.
+Ultimately, we chose to use [Brax](https://github.com/google/brax/) due to [its highly scalable and parallelizable architecture](https://ai.googleblog.com/2021/07/speeding-up-reinforcement-learning-with.html), which makes it well-suited for accelerated hardware (XLA backends such as GPUs and TPUs). This allows us to simulate the grasping task at a high level of realism and detail, while also taking advantage of the increased computational power of modern hardware to speed up the training process.
 
 
 <a id="getting-started" />
