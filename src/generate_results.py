@@ -27,17 +27,21 @@ _HTML = """
 
 	<h3>1. Initial Agent's State </h3>
     <div id="brax-viewer-initial_system"></div>
+	
 	<h3>2. Agent's state after 1K steps</h3>
     <div id="brax-viewer-sys_1K"></div>
+	
 	<h3>3. Agent's state after 5 million steps</h3>
     <div id="brax-viewer-sys_5M"></div>
+	
 	<h3>4. Agent's state after 400 million steps</h3>
     <div id="brax-viewer-sys_400M"></div>
+	
 	<h3>5. Final Agent's state (after 600 million steps)</h3>
     <div id="brax-viewer-final_600M"></div>
     
 	<script type="module">
-	
+
       import {Viewer} from 'https://cdn.jsdelivr.net/gh/google/brax@v0.1.0/js/viewer.js';
 
       const domElement_initial_system = document.getElementById('brax-viewer-initial_system');
