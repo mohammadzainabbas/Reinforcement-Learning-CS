@@ -72,19 +72,21 @@ In the environment, the robotic hand is represented by a 4-fingered claw, which 
 
 <a id="observations" />
 
-#### 2. 🔭 Observations 🔍
+#### 2.1. 🔭 Observations 🔍
 
 #
 
 <a id="actions" />
 
-#### 2. 🏄‍♂️ Actions 🤸‍♂️
+#### 2.2. 🏄‍♂️ Actions 🤸‍♂️
 
 #
 
 <a id="reward" />
 
-#### 2. 🏆 Reward 🥇
+#### 2.3. 🏆 Reward 🥇
+
+
 
 #
 
