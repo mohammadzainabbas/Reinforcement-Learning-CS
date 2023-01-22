@@ -43,7 +43,7 @@ Explore the project easily and quickly through the following _colab_ notebooks:
 
 <a id="introduction" />
 
-### 1. 👨🏻‍💻 Introduction 💻
+### 2. 👨🏻‍💻 Introduction 💻
 
 The field of robotics has seen incredible advancements in recent years, with the development of increasingly sophisticated machines capable of performing a wide range of tasks. One area of particular interest is the ability for robots to manipulate objects in their environment, known as grasping. In this project, we have chosen to focus on a specific grasping task - training a robotic hand to pick up a moving ball object and place it in a specific target location using the [`Brax` physics simulation engine](https://arxiv.org/pdf/2106.13281.pdf).
 
@@ -60,7 +60,7 @@ Reinforcement learning is a powerful tool for training robots to perform complex
 
 <a id="physics-simulation-engines" />
 
-### 2. 🌊 Physics Simulation Engines 🦿
+### 3. 🌊 Physics Simulation Engines 🦿
 
 The use of a physics simulation engine is essential for training a robotic hand to perform the grasping task, as it allows us to simulate the real-world physical interactions between the robot and the ball. Without a physics simulation engine, it would be difficult to accurately model the dynamics of the task, including the forces and torques required for the robotic hand to pick up the ball and move it to the target location.
 
@@ -81,7 +81,7 @@ Ultimately, we chose to use [`Brax`](https://github.com/google/brax/) due to [_i
 
 <a id="environment" />
 
-### 3. 🌪 Environment 🦾
+### 4. 🌪 Environment 🦾
 
 The [grasping environment provided by `Brax`](https://github.com/google/brax/blob/198dee3ac4/brax/envs/grasp.py#L25-L1297) is a simple pick-and-place task, where a 4-fingered claw hand must pick up and move a ball to a target location. The environment is designed to simulate the physical interactions between the robotic hand and the ball, including the forces and torques required for the hand to grasp the ball and move it to the target location.
 
