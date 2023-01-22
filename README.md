@@ -25,8 +25,8 @@ The field of robotics has seen incredible advancements in recent years, with the
 
 <p align="center">
   <img src="https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/dev/docs/assets/figure_1.jpeg?raw=true" width="500" height="300">
-  <p>Grasp – robotic hand which picks a moving ball and moves it to a specific target</p>
 </p>
+<p align="center">Grasp – robotic hand which picks a moving ball and moves it to a specific target</p>
 
 > Grasp – robotic hand which picks a moving ball and moves it to a specific target
 
