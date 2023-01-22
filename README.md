@@ -106,7 +106,7 @@ The reward function goes like the following:
 \text{reward} = \text{moving to object} + \text{close to object} + \text{touching object} + 5 * \text{target hit} + \text{moving to target}
 ```
 
-where each minor step approaching the task completeness will be rewarded, while the `$\text{target hit}$` will gain the biggest reward.
+where each minor step approaching the task completeness will be rewarded, while the $\text{`target hit`}$ will gain the biggest reward.
 
 #
 
