@@ -12,14 +12,18 @@ _HTML = """
         margin: 0;
         padding: 0;
       }
+
 	  h3 {
 		display: flex;
 		justify-content: center;
 	  }
-      #brax-viewer {
+
+      [id^='brax-viewer-']  {
         margin: 0;
         padding: 0;
-        height: 100vh;
+        height: 50vh;
+
+      padding-bottom: 2.5%;
       }
     </style>
   </head>
