@@ -1,5 +1,7 @@
 ## 💡 Reinforcement Learning: Grasp - Pick-and-place with a robotic hand 👨🏻‍💻
 
+You can see the live demo [here](http://mohammadzainabbas.tech/Reinforcement-Learning-CS/).
+
 ### Table of contents
 
 - [🚀 Quickstart 💻](#quickstart)
@@ -25,9 +27,7 @@
 
 <a id="quickstart" />
 
-### 5. 🚀 Quickstart 💻
-
-You can see the live demo [here](http://mohammadzainabbas.tech/Reinforcement-Learning-CS/).
+### 1. 🚀 Quickstart 💻
 
 Explore the project easily and quickly through the following _colab_ notebooks:
 
