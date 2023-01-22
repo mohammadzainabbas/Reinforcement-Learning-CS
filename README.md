@@ -3,14 +3,14 @@
 ### Table of contents
 
 - [👨🏻‍💻 Introduction 👨🏻‍💻](#introduction)
-	* [🌊 Physics Simulation Engines 🦿](#physics-simulation-engines)
+- [🌊 Physics Simulation Engines 🦿](#physics-simulation-engines)
 	* [🌪 Env 🦾](#physics-simulation-engines)
 	* [🔭 Obs 🔍](#physics-simulation-engines)
 	* [🏄‍♂️ ac 🤸‍♂️](#physics-simulation-engines)
 	* [🏆 rw 🥇](#physics-simulation-engines)
 - [🚀 Getting started 🖲️](#getting-started)
 	* [📝 Prerequisites ⚙️](#prerequisites)
-	* [🔧 Installation 🔧](#installation)
+	* [🔨 Installation 🔧](#installation)
 	* [🏃‍♂️ Running Demo(s) 🏃‍♂️](#running-demos)
 	* [🎉 Results 🎉](#results)
 - [🛠 Built With 🛠](#built-with)
