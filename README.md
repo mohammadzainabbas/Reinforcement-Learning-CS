@@ -8,6 +8,7 @@
 	* [🔭 `Observations` 🔍](#observations)
 	* [🏄‍♂️ `Actions` 🤸‍♂️](#actions)
 	* [🏆 `Reward` 🥇](#reward)
+- [🚀 Algorithms 💻](#quickstart)
 - [🚀 Quickstart 💻](#quickstart)
 	* [📝 Prerequisites ⚙️](#prerequisites)
 	* [🔨 Installation 🔧](#installation)
