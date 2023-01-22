@@ -40,14 +40,16 @@ Reinforcement learning is a powerful tool for training robots to perform complex
 
 The use of a physics simulation engine is essential for training a robotic hand to perform the grasping task, as it allows us to simulate the real-world physical interactions between the robot and the ball. Without a physics simulation engine, it would be difficult to accurately model the dynamics of the task, including the forces and torques required for the robotic hand to pick up the ball and move it to the target location.
 
-In this project, we explored several different physics simulation engines, including
+In this project, we explored several different physics simulation engines, including:
 
 - [x] [MuJoCo](https://mujoco.org/) ([dm_control](https://github.com/deepmind/dm_control/), [Gym](https://www.gymlibrary.dev/) and [Gymnasium](https://gymnasium.farama.org/))
 - [x] [TinyDiffSim](https://github.com/erwincoumans/tiny-differentiable-simulator)
 - [x] [DiffTaichi](https://github.com/taichi-dev/difftaichi)
 - [x] [Nimble](https://github.com/keenon/nimblephysics)
 - [x] [PyBullet](https://github.com/bulletphysics/bullet3)
-- [x] and [Brax](https://github.com/google/brax/). Each of these engines has its own strengths and weaknesses, and we carefully considered the trade-offs between them before making a final decision.
+- [x] [Brax](https://github.com/google/brax/). 
+
+Each of these engines has its own strengths and weaknesses, and we carefully considered the trade-offs between them before making a final decision.
 
 Ultimately, we chose to use [Brax](https://github.com/google/brax/) due to [its highly scalable and parallelizable architecture](https://ai.googleblog.com/2021/07/speeding-up-reinforcement-learning-with.html), which makes it well-suited for accelerated hardware (XLA backends such as GPUs and TPUs). This allows us to simulate the grasping task at a high level of realism and detail, while also taking advantage of the increased computational power of modern hardware to speed up the training process.
 
