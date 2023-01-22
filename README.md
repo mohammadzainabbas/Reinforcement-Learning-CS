@@ -184,6 +184,11 @@ You can see the live demo [here](http://mohammadzainabbas.tech/Reinforcement-Lea
 Explore the project easily and quickly through the following _colab_ notebooks:
 
 - [`Grasp: Pick-and-place with a robotic hand`](https://colab.research.google.com/github/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/notebooks/demo.ipynb) - this demo notebook compares first three [algorithms](#algorithms) and train agents on `Grasp` environment by `Brax`. At the end, it also shows trained `PPO agent` interaction with the environment.
+
+<p align="center">
+  <img src="https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/docs/assets/compare_algorithms.jpeg?raw=true" width="250" height="150">
+</p>
+
 - [`Step-by-step training with PPO`](https://colab.research.google.com/github/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/notebooks/demo_ppo_train.ipynb) - this notebook shows step-by-step training of `PPO agent` on `Grasp` environment by `Brax`.
 
 #
@@ -262,6 +267,3 @@ You will get the following output files:
 
 The following plot shows the comparsion between training progress of `Proximal policy optimization (PPO)`, `Evolution Strategy (ES)` and `Augmented Random Search (ARS)` algorithms:
 
-<p align="center">
-  <img src="https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/docs/assets/compare_algorithms.jpeg?raw=true" width="500" height="300">
-</p>
