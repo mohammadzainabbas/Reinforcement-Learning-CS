@@ -116,6 +116,14 @@ $$
 
 <br>
 
+$$
+\text{moving to object} : \text{small reward for moving towards the object.} \nonumber \\
+\text{close to object} : \text{small reward for being close to the object.} \nonumber \\
+\text{touching object} : \text{small reward for touching the object.} \nonumber \\
+\text{target hit} : \text{high reward for hitting the target (max. reward).} \nonumber \\
+\text{moving to target} : \text{high reward for moving towards the target.} \nonumber
+$$
+
 
 where each minor step approaching the task completeness will be rewarded, while the $\text{target hit}$ will gain the biggest reward.
 
