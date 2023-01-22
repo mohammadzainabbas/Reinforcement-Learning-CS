@@ -215,10 +215,10 @@ git clone https://github.com/mohammadzainabbas/Reinforcement-Learning-CS.git
 cd Reinforcement-Learning-CS/
 ```
 
-2. Install the requirements
+2. Create a new enviornment and install all depend
 
 ```bash
-pip install -r requirements.txt
+
 ```
 
 #
