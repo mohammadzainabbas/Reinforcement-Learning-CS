@@ -215,7 +215,14 @@ git clone https://github.com/mohammadzainabbas/Reinforcement-Learning-CS.git
 cd Reinforcement-Learning-CS/
 ```
 
-2. Create a new enviornment and install all depend
+2. Create a new enviornment and install all dependencies
+
+First, [install `mamba`]() via
+
+```bash
+conda install mamba -n base -c conda-forge
+```
+
 
 ```bash
 
