@@ -14,7 +14,7 @@
 	* [💡 `Evolution Strategy (ES)` 👨🏻‍💻](#es)
 	* [💡 `Augmented Random Search (ARS)` 👨🏻‍💻](#ars)
 	* [💡 `Soft Actor-Critic (SAC)` 👨🏻‍💻](#sac)
-- [🚀 Quickstart 💻](#quickstart)
+- [🚀 Getting started 🖲️](#getting-started)
 	* [📝 Prerequisites ⚙️](#prerequisites)
 	* [🔨 Installation 🔧](#installation)
 	* [🏃‍♂️ Running Demo(s) 🏃‍♂️](#running-demos)
