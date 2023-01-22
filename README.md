@@ -227,4 +227,16 @@ You will get the following output files:
 * `result_with_ppo.html` - Simulation of the trained agent (in HTML format)
 * `ppo_params` - Trained parameters of the agent
 
+[`train_ppo.py`](https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/src/train_ppo.py) - train the reinforcement learning agent using `PPO` algorithm:
+
+```bash
+python src/train_ppo.py
+```
+
+You will get the following output files:
+
+* `ppo_training.png` - Training progress plot
+* `result_with_ppo.html` - Simulation of the trained agent (in HTML format)
+* `ppo_params` - Trained parameters of the agent
+
 #
