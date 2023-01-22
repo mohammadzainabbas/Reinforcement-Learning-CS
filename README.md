@@ -224,10 +224,3 @@ You will get the following output files:
 3. `ppo_params` - Trained parameters of the agent
 
 #
-
-<a id="results" />
-
-#### 2.4. 🎉 Results 🎉
-
-The following plot shows the comparsion between training progress of `Proximal policy optimization (PPO)`, `Evolution Strategy (ES)` and `Augmented Random Search (ARS)` algorithms:
-
