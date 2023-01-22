@@ -1,3 +1,32 @@
+from json import loads
+
+def read_json(path: str) -> dict:
+	with open(path, "r") as f:
+		return loads(f.read())
+
+def main() -> None:
+
+	with open("results/initial_system.json", "r") as f:
+		initial_system = loads(f.read())
+
+	with open("results/sys_1K.json", "r") as f:
+		sys_1K = loads(f.read())
+
+	with open("results/sys_5M.json", "r") as f:
+		sys_5M = loads(f.read())
+
+	with open("results/sys_400M.json", "r") as f:
+		sys_400M = loads(f.read())
+
+	with open("results/final_600M.json", "r") as f:
+		final_600M = loads(f.read())
+
+	with open("results/index.html", "w") as f:
+		f.write(INDEX_HTML.replace("<!-- initial_system -->", str(initial_system))
+							.replace("<!-- sys_1K -->", str(sys_1K))
+							.replace("<!-- sys_5M -->", str(sys_5M))
+							.replace("<!-- sys_400M -->", str(sys_400M))
+							.replace("<!-- final_600M -->", str(final_600M)))
 
 _HTML = """
 <html>
