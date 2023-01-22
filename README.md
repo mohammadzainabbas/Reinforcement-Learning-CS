@@ -28,8 +28,6 @@ The field of robotics has seen incredible advancements in recent years, with the
 </p>
 <p align="center">Grasp – robotic hand which picks a moving ball and moves it to a specific target</p>
 
-> Grasp – robotic hand which picks a moving ball and moves it to a specific target
-
 The reason for choosing this project is twofold. Firstly, the ability for robots to grasp and manipulate objects is a fundamental skill that is crucial for many real-world applications, such as manufacturing, logistics, and service industries. Secondly, the use of a physics simulation engine allows us to train our robotic hand in a realistic and controlled environment, without the need for expensive hardware and the associated costs and safety concerns.
 
 Reinforcement learning is a powerful tool for training robots to perform complex tasks, as it allows the robot to learn through trial and error. In this project, we will be using reinforcement learning techniques to train our robotic hand, and we hope to demonstrate the effectiveness of this approach in solving the grasping task.
