@@ -151,25 +151,25 @@ We will use the brax’s optimized algorithms: `PPO`, `ES`, `ARS` and `SAC`.
 
 <a id="ppo" />
 
-#### 4. 💡 `Proximal policy optimization (PPO)` 👨🏻‍💻
+#### 4. 💡 Proximal policy optimization (PPO)` 👨🏻‍💻
 
 [`Proximal Policy Optimization (PPO)`](https://arxiv.org/abs/1707.06347) is a model-free online policy gradient reinforcement learning algorithm, developed at OpenAI in 2017. PPO strikes a balance between ease of implementation, sample complexity, and ease of tuning, trying to compute an update at each step that minimizes the cost function while ensuring the deviation from the previous policy is relatively small. Generally speaking, it is a clipper version A2C algorithm.
 
 <a id="es" />
 
-#### 4. 💡 `Evolution Strategy (ES)` 👨🏻‍💻
+#### 4. 💡 Evolution Strategy (ES)` 👨🏻‍💻
 
 [`Evolution Strategy (ES)`](https://arxiv.org/abs/1707.06347) is Inspired by natural evolution, it is a powerful black-box optimization technique. A group of random noise is tested for the network parameters, and the highest scoring parameter vectors are chosen to evolute the network. It is a different method compared with using the loss function to back propagate the network. ES can be parallelized using XLA backend (`CPU`/`GPU`/`TPU`) to speed up the training.
 
 <a id="ars" />
 
-#### 4. 💡 `Augmented Random Search (ARS)` 👨🏻‍💻
+#### 4. 💡 Augmented Random Search (ARS)` 👨🏻‍💻
 
 [`Augmented Random Search (ARS)`](https://arxiv.org/abs/1803.07055) is a random search method for training linear policies for continuous control problems. It operates directly on the policy weights, each epoch the agent perturbs its current policy N times, and collects 2N rollouts using the modified policies. The rewards from these rollouts are used to update the current policy weights, repeat until completion. The algorithm is known to have high variance; not all seeds obtain high rewards, but to our knowledge their work in many ways represents the state of the art on these benchmarks.
 
 <a id="sac" />
 
-#### 4. 💡 `Soft Actor-Critic (SAC)` 👨🏻‍💻
+#### 4. 💡 Soft Actor-Critic (SAC)` 👨🏻‍💻
 
 [`Soft Actor-Critic (SAC)`](https://arxiv.org/abs/1801.01290) is an off-policy model-free reinforcement framework. The actor aims to maximize expected reward while also maximizing entropy. That is, to succeed at the task while acting as randomly as possible, and that is why it’s called ‘soft’. SAC has better sample efficiency than PPO.
 
