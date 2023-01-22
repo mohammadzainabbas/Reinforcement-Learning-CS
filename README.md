@@ -227,11 +227,6 @@ Then, create a new environment and install all dependencies, and activate it.
 
 ```bash
 mamba env create -n reinforcement_learning -f docs/config/reinforcement_learning_env.yaml
-```
-
-3. Activate the environment
-
-```bash
 conda activate reinforcement_learning
 ```
 
