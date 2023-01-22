@@ -1,8 +1,8 @@
 from json import loads
-from typing import Union, Dict
+from typing import Union, Dict, Any
 from pathlib import Path
 
-def read_json(path: Union[str, Path]) -> Dict[str]:
+def read_json(path: Union[str, Path]) -> Dict[str, Any]:
 	with open(path, "r") as f:
 		return loads(f.read())
 
