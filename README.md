@@ -217,10 +217,11 @@ cd Reinforcement-Learning-CS/
 
 2. Create a new enviornment and install all dependencies
 
-First, [install `mamba`]() via
+First, [install `mamba`](https://mamba.readthedocs.io/en/latest/installation.html), a fast and efficient package manager for `conda`. Then, create a new environment and install all dependencies.
 
 ```bash
 conda install mamba -n base -c conda-forge
+
 ```
 
 
