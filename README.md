@@ -241,6 +241,9 @@ you will get the same output files as `PPO` algorithm.
 python src/generate_results.py
 ```
 
+You can see the live output [here](http://mohammadzainabbas.tech/Reinforcement-Learning-CS/).
 
+
+[`generate_results.py`](https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/src/generate_results.py) - generate the results of the trained agents:
 
 #
