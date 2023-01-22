@@ -74,6 +74,19 @@ In the environment, the robotic hand is represented by a 4-fingered claw, which 
 
 #### 2.1. 🔭 Observations 🔍
 
+The environment observes _three_ main bodies: the `Hand`, the `Object`, and the `Target`. The agent uses these observations to learn how to control the robotic hand and move the object to the target location.
+
+1. The `Hand` observation includes information about the state of the robotic hand, such as the position and orientation of the fingers, the joint angles, and the forces and torques applied to the hand. This information is used by the agent to control the hand and pick up the object.
+
+2. The `Object` observation includes information about the state of the object, such as its position, velocity, and orientation. This information is used by the agent to track the object and move it to the target location.
+
+3. The `Target` observation includes information about the target location, such as its position and orientation. This information is used by the agent to navigate the hand and the object to the target location.
+
+When the object reaches the target location, the agent is rewarded. The agent is also given a penalty if the object falls or if the hand collides with any obstacle. The agent's goal is to maximize the reward, which means reaching the target location as quickly and efficiently as possible.
+
+Overall, the observations provided by the Grasp environment are designed to give the agent the information it needs to learn how to control the robotic hand and move the object to the target location. The combination of the Hand, Object, and Target observations allows the agent to learn from the environment and improve its performance over time.
+
+
 #
 
 <a id="actions" />
