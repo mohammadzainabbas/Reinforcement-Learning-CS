@@ -233,10 +233,8 @@ You will get the following output files:
 python src/train_sac.py
 ```
 
-You will get the following output files:
+you will get the same output files as `PPO` algorithm.
 
-* `sac_training.png` - Training progress plot
-* `result_with_sac.html` - Simulation of the trained agent (in HTML format)
-* `sac_params` - Trained parameters of the agent
+
 
 #
