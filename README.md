@@ -84,6 +84,9 @@ You will get the following output files:
 
 #### 2.4. 🎉 Results 🎉
 
-The following plot shows the training progress of the agent:
+The following plot shows the comparsion between training progress of `Proximal policy optimization (PPO)`, `Evolution Strategy (ES)` and `Augmented Random Search (ARS)` algorithms:
 
-![Training progress plot](https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/results/output.jpeg?raw=true)
+<p align="center">
+  <img src="https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/results/output.jpeg?raw=true" width="500" height="300">
+</p>
+

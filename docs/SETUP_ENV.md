@@ -37,7 +37,7 @@ mamba env create -n reinforcement_learning -f docs/config/reinforcement_learning
 Before starting further, make sure that you have `conda` (Anaconda) installed (otherwise, create a new env via [virutalenv](#new-env-virtualenv)). We will create a new enviornment for the purpose of our labs:
 
 ```bash
-conda create -n reinforcement_learning python=3 -y 
+conda create -n reinforcement_learning python=3.10 -y 
 ```
 
 and activate it
