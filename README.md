@@ -22,8 +22,7 @@ The field of robotics has seen incredible advancements in recent years, with the
   <img src="https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/docs/assets/figure_1.jpeg?raw=true" width="500" height="300">
 </p>
 
-
-Figure 1  Grasp – robotic hand which picks a moving ball and moves it to a specific target
+> Grasp – robotic hand which picks a moving ball and moves it to a specific target
 
 The reason for choosing this project is twofold. Firstly, the ability for robots to grasp and manipulate objects is a fundamental skill that is crucial for many real-world applications, such as manufacturing, logistics, and service industries. Secondly, the use of a physics simulation engine allows us to train our robotic hand in a realistic and controlled environment, without the need for expensive hardware and the associated costs and safety concerns.
 
