@@ -66,7 +66,7 @@ The [grasping environment provided by `Brax`](https://github.com/google/brax/blo
 </p>
 <p align="center">The hand is able to pick up the ball and carry it to a series of red targets. Once the ball gets close to the red target, the red target is respawned at a different random location</p>
 
-In the environment, the robotic hand is represented by a 4-fingered claw, which is capable of opening and closing to grasp the ball. The ball is placed in a random location at the beginning of each episode, and the target location is also randomly chosen. The goal of the robotic hand is to move the ball to the target location as quickly and efficiently as possible. For more details, check [this]().
+In the environment, the robotic hand is represented by a 4-fingered claw, which is capable of opening and closing to grasp the ball. The ball is placed in a random location at the beginning of each episode, and the target location is also randomly chosen. The goal of the robotic hand is to move the ball to the target location as quickly and efficiently as possible. For more details, check [4.2.2 Grasp](https://arxiv.org/pdf/2106.13281.pdf).
 
 
 <a id="getting-started" />
