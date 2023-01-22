@@ -141,6 +141,12 @@ where each minor step approaching the task completeness will be rewarded, while 
 
 ### 4. 🚀 Quickstart 💻
 
+#
+
+<a id="quickstart" />
+
+### 5. 🚀 Quickstart 💻
+
 Explore the project easily and quickly through the following _colab_ notebooks:
 
 - [`Grasp: Pick-and-place with a robotic hand`](https://colab.research.google.com/github/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/notebooks/demo.ipynb) - this demo notebook compares first three [algorithms](#algorithms) and train agents on `Grasp` environment by `Brax`. At the end, it also shows trained `PPO agent` interaction with the environment.
