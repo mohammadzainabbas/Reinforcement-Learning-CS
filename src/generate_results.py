@@ -10,7 +10,7 @@ def read_json(path: Union[str, Path]) -> Dict[str, Any]:
 def main() -> None:
 	# Read the JSON files
 
-	results_dir = Path(__file__).resolve().parents[1]
+	results_dir = join(Path(__file__).resolve().parents[1], "docs", "results")
 
 	print(results_dir)
 
@@ -104,4 +104,3 @@ _HTML = """
 
 if __name__ == "__main__":
 	main()
-	
