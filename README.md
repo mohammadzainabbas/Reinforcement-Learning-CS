@@ -2,7 +2,7 @@
 
 ### Table of contents
 
-- [👨🏻‍💻 Introduction 👨🏻‍💻](#introduction)
+- [💻 Introduction 👨🏻‍💻](#introduction)
 - [🌊 Physics Simulation Engines 🦿](#physics-simulation-engines)
 - [🌪 Environment 🦾](#environment)
 	* [🔭 Observations 🔍](#observations)
