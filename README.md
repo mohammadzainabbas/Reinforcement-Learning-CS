@@ -138,7 +138,8 @@ where each minor step approaching the task completeness will be rewarded, while 
 
 Explore the project easily and quickly through the following _colab_ notebooks:
 
-- 
+- [`Grasp: Pick-and-Place with a robotic hand`](https://colab.research.google.com/github/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/notebooks/demo.ipynb) 
+- [`Step-by-step training with PPO`](https://colab.research.google.com/github/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/notebooks/demo_ppo_train.ipynb)
 
 #
 
