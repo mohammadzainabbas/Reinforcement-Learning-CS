@@ -75,7 +75,7 @@ def read_json(path: Union[str, Path]) -> Dict[str, Any]:
 
 def main() -> None:
 	# Read the JSON files
-	results_dir = join(Path(__file__).resolve().parents[1], "docs", "results")
+	results_dir = join(Path(__file__).resolve().parents[1], "results")
 	
 	initial_system = read_json(join(results_dir, "initial_system.json"))
 	sys_1K = read_json(join(results_dir, "sys_1K.json"))
