@@ -1,4 +1,3 @@
-from json import loads
 from typing import Union
 from pathlib import Path
 from os.path import join
@@ -13,11 +12,11 @@ _HTML = """
         padding: 0;
       }
 
-	  h3 {
-		display: flex;
-		justify-content: center;
-		padding-top: 18px;
-	  }
+      h3 {
+      display: flex;
+      justify-content: center;
+      padding-top: 18px;
+      }
 
       [id^='brax-viewer-']  {
         margin: 0;
