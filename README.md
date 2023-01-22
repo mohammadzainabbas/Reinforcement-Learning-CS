@@ -26,4 +26,64 @@ This repository contains the code and resources for a reinforcement learning pro
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
+#
 
+<a id="prerequisites" />
+
+#### 2.1. ⚙️ Prerequisites ⚙️
+
+- [x] Python 3.7 or higher
+- [x] Brax 0.1.0 or higher
+- [x] Jax 0.4.1 or higher
+- [x] Flax 0.6.3 or higher
+- [x] PyTorch 1.13.1 or higher
+
+#
+
+<a id="installation" />
+
+#### 2.2. 🔧 Installation 🔧
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/mohammadzainabbas/Reinforcement-Learning-CS.git
+cd Reinforcement-Learning-CS/
+```
+
+2. Install the requirements
+
+```bash
+pip install -r requirements.txt
+```
+
+#
+
+<a id="running-demos" />
+
+#### 2.3. 🏃‍♂️ Running Demo(s) 🏃‍♂️
+
+- [x] [Grasp: Pick-and-Place with a robotic hand](https://colab.research.google.com/github/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/notebooks/demo.ipynb)
+- [x] [Step-by-step training with PPO](https://colab.research.google.com/github/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/notebooks/demo_ppo_train.ipynb)
+
+Or you can run the `train_ppo.py` file locally by following the steps below:
+
+```bash
+python src/train_ppo.py
+```
+
+You will get the following output files:
+
+1. `ppo_training.png` - Training progress plot
+2. `result_with_ppo.html` - Simulation of the trained agent (in HTML format)
+3. `ppo_params` - Trained parameters of the agent
+
+#
+
+<a id="results" />
+
+#### 2.4. 🎉 Results 🎉
+
+The following plot shows the training progress of the agent:
+
+![Training progress plot](https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/results/output.png?raw=true)
