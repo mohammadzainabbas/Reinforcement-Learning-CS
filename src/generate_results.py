@@ -42,6 +42,17 @@ _HTML = """
       const domElement_initial_system = document.getElementById('brax-viewer-initial_system');
       var viewer_initial_system = new Viewer(domElement_initial_system, initial_system);
 
+      const domElement_initial_system = document.getElementById('brax-viewer-initial_system');
+      var viewer_initial_system = new Viewer(domElement_initial_system, initial_system);
+
+      const domElement_initial_system = document.getElementById('brax-viewer-initial_system');
+      var viewer_initial_system = new Viewer(domElement_initial_system, initial_system);
+
+      const domElement_initial_system = document.getElementById('brax-viewer-initial_system');
+      var viewer_initial_system = new Viewer(domElement_initial_system, initial_system);
+
+      const domElement_initial_system = document.getElementById('brax-viewer-initial_system');
+      var viewer_initial_system = new Viewer(domElement_initial_system, initial_system);
     </script>
   </body>
 </html>
