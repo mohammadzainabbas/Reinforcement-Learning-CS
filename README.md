@@ -68,6 +68,25 @@ The [grasping environment provided by `Brax`](https://github.com/google/brax/blo
 
 In the environment, the robotic hand is represented by a 4-fingered claw, which is capable of opening and closing to grasp the ball. The ball is placed in a random location at the beginning of each episode, and the target location is also randomly chosen. The goal of the robotic hand is to move the ball to the target location as quickly and efficiently as possible. For more details, check [_4.2.2_](https://arxiv.org/pdf/2106.13281.pdf).
 
+#
+
+<a id="observations" />
+
+#### 2. 🔭 Observations 🔍
+
+#
+
+<a id="actions" />
+
+#### 2. 🏄‍♂️ Actions 🤸‍♂️
+
+#
+
+<a id="reward" />
+
+#### 2. 🏆 Reward 🥇
+
+#
 
 <a id="getting-started" />
 
