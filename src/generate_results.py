@@ -10,7 +10,7 @@ def read_json(path: Union[str, Path]) -> Dict[str, Any]:
 def main() -> None:
 	# Read the JSON files
 
-	results_dir = Path(__file__).parent.resolve()[2]
+	results_dir = Path(__file__).resolve().parents[1]
 
 	with open("results/initial_system.json", "r") as f:
 		initial_system = loads(f.read())
@@ -28,7 +28,7 @@ def main() -> None:
 		final_600M = loads(f.read())
 
 	with open("results/index.html", "w") as f:
-		f.write(INDEX_HTML.replace("<!-- initial_system -->", str(initial_system))
+		f.write(_HTML.replace("<!-- initial_system -->", str(initial_system))
 							.replace("<!-- sys_1K -->", str(sys_1K))
 							.replace("<!-- sys_5M -->", str(sys_5M))
 							.replace("<!-- sys_400M -->", str(sys_400M))
