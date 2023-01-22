@@ -59,6 +59,9 @@ Ultimately, we chose to use [`Brax`](https://github.com/google/brax/) due to [_i
 
 ### 3. 🌪 Environment 🦾
 
+The grasping environment provided by Brax is a simple pick-and-place task, where a 4-fingered claw hand must pick up and move a ball to a target location. The environment is designed to simulate the physical interactions between the robotic hand and the ball, including the forces and torques required for the hand to grasp the ball and move it to the target location (see Figure 2).
+
+In the environment, the robotic hand is represented by a 4-fingered claw, which is capable of opening and closing to grasp the ball. The ball is placed in a random location at the beginning of each episode, and the target location is also randomly chosen. The goal of the robotic hand is to move the ball to the target location as quickly and efficiently as possible.
 
 
 <a id="getting-started" />
