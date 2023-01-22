@@ -227,7 +227,7 @@ Then, create a new environment and install all dependencies.
 
 
 ```bash
-
+mamba env create -n reinforcement_learning -f docs/config/reinforcement_learning_env.yaml
 ```
 
 #
