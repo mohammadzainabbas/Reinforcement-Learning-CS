@@ -64,7 +64,7 @@ The [grasping environment provided by `Brax`](https://github.com/google/brax/blo
 <p align="center">
   <img src="https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/dev/docs/assets/figure_2.jpeg?raw=true" width="500" height="300">
 </p>
-<p align="center">Grasp – robotic hand which picks a moving ball and moves it to a specific target</p>
+<p align="center">The hand is able to pick up the ball and carry it to a series of red targets. Once the ball gets close to the red target, the red target is respawned at a different random location</p>
 
 In the environment, the robotic hand is represented by a 4-fingered claw, which is capable of opening and closing to grasp the ball. The ball is placed in a random location at the beginning of each episode, and the target location is also randomly chosen. The goal of the robotic hand is to move the ball to the target location as quickly and efficiently as possible.
 
