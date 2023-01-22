@@ -147,9 +147,13 @@ where each minor step approaching the task completeness will be rewarded, while 
 
 ### 4. 🔬 Algorithms 💻
 
+We will use the brax’s optimized algorithms: `PPO`, `ES`, `ARS` and `SAC`.
+
 <a id="ppo" />
 
 #### 4. 💡 `Proximal policy optimization (PPO)` 👨🏻‍💻
+
+
 
 <a id="es" />
 
