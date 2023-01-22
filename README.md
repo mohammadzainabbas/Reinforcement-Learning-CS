@@ -21,7 +21,7 @@
 
 ### 1. 👨🏻‍💻 Introduction 👨🏻‍💻
 
-The field of robotics has seen incredible advancements in recent years, with the development of increasingly sophisticated machines capable of performing a wide range of tasks. One area of particular interest is the ability for robots to manipulate objects in their environment, known as grasping. In this project, we have chosen to focus on a specific grasping task - training a robotic hand to pick up a moving ball object and place it in a specific target location using the [Brax physics simulation engine](https://arxiv.org/pdf/2106.13281.pdf).
+The field of robotics has seen incredible advancements in recent years, with the development of increasingly sophisticated machines capable of performing a wide range of tasks. One area of particular interest is the ability for robots to manipulate objects in their environment, known as grasping. In this project, we have chosen to focus on a specific grasping task - training a robotic hand to pick up a moving ball object and place it in a specific target location using the [`Brax` physics simulation engine](https://arxiv.org/pdf/2106.13281.pdf).
 
 <p align="center">
   <img src="https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/dev/docs/assets/figure_1.jpeg?raw=true" width="500" height="300">
@@ -51,7 +51,7 @@ In this project, we explored several different physics simulation engines, inclu
 
 Each of these engines has its own strengths and weaknesses, and we carefully considered the trade-offs between them before making a final decision.
 
-Ultimately, we chose to use [Brax](https://github.com/google/brax/) due to [its highly scalable and parallelizable architecture](https://ai.googleblog.com/2021/07/speeding-up-reinforcement-learning-with.html), which makes it well-suited for accelerated hardware (XLA backends such as GPUs and TPUs). This allows us to simulate the grasping task at a high level of realism and detail, while also taking advantage of the increased computational power of modern hardware to speed up the training process.
+Ultimately, we chose to use [`Brax`](https://github.com/google/brax/) due to [its highly scalable and parallelizable architecture](https://ai.googleblog.com/2021/07/speeding-up-reinforcement-learning-with.html), which makes it well-suited for accelerated hardware (XLA backends such as `GPUs` and `TPUs`). This allows us to simulate the grasping task at a high level of realism and detail, while also taking advantage of the increased computational power of modern hardware to speed up the training process.
 
 
 <a id="getting-started" />
