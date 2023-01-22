@@ -108,6 +108,13 @@ The reward function goes like the following:
 
 where:
 
+<br>
+
+$$
+\text{reward} : \text{final reward achieved.}  \nonumber \\
+$$
+
+<br>
 
 
 where each minor step approaching the task completeness will be rewarded, while the $\text{target hit}$ will gain the biggest reward.
