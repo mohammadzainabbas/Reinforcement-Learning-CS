@@ -223,21 +223,17 @@ First, [install `mamba`](https://mamba.readthedocs.io/en/latest/installation.htm
 conda install mamba -n base -c conda-forge
 ```
 
-Then, create a new environment and install all dependencies.
-
+Then, create a new environment and install all dependencies:
 
 ```bash
 mamba env create -n reinforcement_learning -f docs/config/reinforcement_learning_env.yaml
 ```
 
-#
+3. Activate the environment
 
-<a id="running-demos" />
-
-#### 2.3. 🏃‍♂️ Running Demo(s) 🏃‍♂️
-
-- [x] [Grasp: Pick-and-Place with a robotic hand](https://colab.research.google.com/github/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/notebooks/demo.ipynb)
-- [x] [Step-by-step training with PPO](https://colab.research.google.com/github/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/notebooks/demo_ppo_train.ipynb)
+```bash
+conda activate reinforcement_learning
+```
 
 Or you can run the `train_ppo.py` file locally by following the steps below:
 
