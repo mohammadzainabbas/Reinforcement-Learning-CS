@@ -17,11 +17,7 @@ You can see the live demo [here](http://mohammadzainabbas.tech/Reinforcement-Lea
 	* [💡 `Augmented Random Search (ARS)` 👨🏻‍💻](#ars)
 	* [💡 `Soft Actor-Critic (SAC)` 👨🏻‍💻](#sac)
 - [🚀 Getting started 🖲️](#getting-started)
-	* [📝 Prerequisites ⚙️](#prerequisites)
-	* [🔨 Installation 🔧](#installation)
-	* [🏃‍♂️ Running Demo(s) 🏃‍♂️](#running-demos)
-	* [🎉 Results 🎉](#results)
-- [🛠 Built With 🛠](#built-with)
+- [🎉 Results 🎉](#results)
 
 #
 
