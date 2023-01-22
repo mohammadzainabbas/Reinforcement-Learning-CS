@@ -179,6 +179,8 @@ We will use the brax’s optimized algorithms: `PPO`, `ES`, `ARS` and `SAC`.
 
 ### 5. 🚀 Quickstart 💻
 
+You can see the live demo [here](http://mohammadzainabbas.tech/Reinforcement-Learning-CS/).
+
 Explore the project easily and quickly through the following _colab_ notebooks:
 
 - [`Grasp: Pick-and-place with a robotic hand`](https://colab.research.google.com/github/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/notebooks/demo.ipynb) - this demo notebook compares first three [algorithms](#algorithms) and train agents on `Grasp` environment by `Brax`. At the end, it also shows trained `PPO agent` interaction with the environment.
