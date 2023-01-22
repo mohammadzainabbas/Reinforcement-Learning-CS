@@ -31,7 +31,7 @@ Explore the project easily and quickly through the following _colab_ notebooks:
 - [`Grasp: Pick-and-place with a robotic hand`](https://colab.research.google.com/github/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/notebooks/demo.ipynb) - this demo notebook compares first three [algorithms](#algorithms) and train agents on `Grasp` environment by `Brax`. At the end, it also shows trained `PPO agent` interaction with the environment.
 
 <p align="center">
-  <img src="https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/dev/docs/assets/compare_algorithms.jpeg?raw=true" width="auto" height="225">
+  <img src="https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/docs/assets/compare_algorithms.jpeg?raw=true" width="auto" height="225">
 </p>
 
 - [`Step-by-step training with PPO`](https://colab.research.google.com/github/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/notebooks/demo_ppo_train.ipynb) - this notebook shows step-by-step training of `PPO agent` on `Grasp` environment by `Brax`.
@@ -45,7 +45,7 @@ Explore the project easily and quickly through the following _colab_ notebooks:
 The field of robotics has seen incredible advancements in recent years, with the development of increasingly sophisticated machines capable of performing a wide range of tasks. One area of particular interest is the ability for robots to manipulate objects in their environment, known as grasping. In this project, we have chosen to focus on a specific grasping task - training a robotic hand to pick up a moving ball object and place it in a specific target location using the [`Brax` physics simulation engine](https://arxiv.org/pdf/2106.13281.pdf).
 
 <p align="center">
-  <img src="https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/dev/docs/assets/figure_1.jpeg?raw=true" width="500" height="300">
+  <img src="https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/docs/assets/figure_1.jpeg?raw=true" width="500" height="300">
 </p>
 <p align="center">Grasp – robotic hand which picks a moving ball and moves it to a specific target</p>
 
@@ -83,7 +83,7 @@ Ultimately, we chose to use [`Brax`](https://github.com/google/brax/) due to [_i
 The [grasping environment provided by `Brax`](https://github.com/google/brax/blob/198dee3ac4/brax/envs/grasp.py#L25-L1297) is a simple pick-and-place task, where a 4-fingered claw hand must pick up and move a ball to a target location. The environment is designed to simulate the physical interactions between the robotic hand and the ball, including the forces and torques required for the hand to grasp the ball and move it to the target location.
 
 <p align="center">
-  <img src="https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/dev/docs/assets/figure_2.jpeg?raw=true" width="500" height="300">
+  <img src="https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/docs/assets/figure_2.jpeg?raw=true" width="500" height="300">
 </p>
 <p align="center">The hand is able to pick up the ball and carry it to a series of red targets. Once the ball gets close to the red target, the red target is respawned at a different random location</p>
 
