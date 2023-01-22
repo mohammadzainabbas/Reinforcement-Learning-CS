@@ -37,6 +37,7 @@ _HTML = """
     <div id="brax-viewer-final_600M"></div>
     
 	<script type="module">
+	
       import {Viewer} from 'https://cdn.jsdelivr.net/gh/google/brax@v0.1.0/js/viewer.js';
 
       const domElement_initial_system = document.getElementById('brax-viewer-initial_system');
@@ -53,7 +54,7 @@ _HTML = """
 
       const domElement_final_600M = document.getElementById('brax-viewer-final_600M');
       var vieweral_600M = new Viewer(domElement_final_600M, final_600M);
-	  
+
     </script>
   </body>
 </html>
