@@ -42,7 +42,7 @@ The use of a physics simulation engine is essential for training a robotic hand 
 
 In this project, we explored several different physics simulation engines, including:
 
-- [x] [MuJoCo](https://mujoco.org/) ([dm_control](https://github.com/deepmind/dm_control/), [Gym](https://www.gymlibrary.dev/) and [Gymnasium](https://gymnasium.farama.org/))
+- [x] [MuJoCo](https://mujoco.org/) ([`dm_control`](https://github.com/deepmind/dm_control/), [`Gym`](https://www.gymlibrary.dev/) and [`Gymnasium`](https://gymnasium.farama.org/))
 - [x] [TinyDiffSim](https://github.com/erwincoumans/tiny-differentiable-simulator)
 - [x] [DiffTaichi](https://github.com/taichi-dev/difftaichi)
 - [x] [Nimble](https://github.com/keenon/nimblephysics)
