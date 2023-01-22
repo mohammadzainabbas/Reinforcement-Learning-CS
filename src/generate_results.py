@@ -74,7 +74,6 @@ def read_json(path: Union[str, Path]) -> Dict[str, Any]:
 		return loads(f.read())
 
 def main() -> None:
-
 	# Read the JSON files
 	results_dir = join(Path(__file__).resolve().parents[1], "docs", "results")
 	
