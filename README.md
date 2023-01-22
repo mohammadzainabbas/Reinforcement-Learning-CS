@@ -134,7 +134,7 @@ where each minor step approaching the task completeness will be rewarded, while 
 
 <a id="getting-started" />
 
-### 2. 🚀 Getting started 🚀
+### 4. 🚀 Getting started 🖲️
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
