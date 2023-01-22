@@ -79,7 +79,7 @@ _HTML = """
 
 def read_json(path: Union[str, Path]) -> Dict[str, Any]:
 	with open(path, "r") as f:
-		return loads(f.read())
+		return f.read()
 
 def main() -> None:
 	# Read the JSON files
@@ -93,7 +93,7 @@ def main() -> None:
 	final_600M = read_json(join(data_dir, "final_600M.json"))
 
 	# Write the HTML file
-	with open(join(results_dir, "index.html"), "w") as f:
+	with open(join(results_dir, "index1.html"), "w") as f:
 		f.write(_HTML.replace("<!-- initial_system -->", str(initial_system))
 							.replace("<!-- sys_1K -->", str(sys_1K))
 							.replace("<!-- sys_5M -->", str(sys_5M))
