@@ -84,7 +84,7 @@ You will get the following output files:
 
 #### 2.4. 🎉 Results 🎉
 
-The following plot shows the training progress of the agent:
+The following plot shows the comparsion between training progress of PPO, ES and ARG algorithms:
 
 <p align="center">
   <img src="https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/results/output.jpeg?raw=true" width="500" height="300">
