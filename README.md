@@ -108,14 +108,6 @@ The reward function goes like the following:
 
 where:
 
-<br>
-
-```math
-\text{reward} : \text{final reward achieved.}  \nonumber \\
-```
-
-<br>
-
 ```math
 \text{moving to object} : \text{small reward for moving towards the object.} \nonumber \\
 ```
