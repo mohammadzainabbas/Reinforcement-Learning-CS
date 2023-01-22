@@ -153,11 +153,13 @@ We will use the brax’s optimized algorithms: `PPO`, `ES`, `ARS` and `SAC`.
 
 #### 4. 💡 `Proximal policy optimization (PPO)` 👨🏻‍💻
 
-[`Proximal Policy Optimization (PPO)`]() is a model-free online policy gradient reinforcement learning algorithm, developed at OpenAI in 2017. PPO strikes a balance between ease of implementation, sample complexity, and ease of tuning, trying to compute an update at each step that minimizes the cost function while ensuring the deviation from the previous policy is relatively small. Generally speaking, it is a clipper version A2C algorithm.
+[`Proximal Policy Optimization (PPO)`](https://arxiv.org/abs/1707.06347) is a model-free online policy gradient reinforcement learning algorithm, developed at OpenAI in 2017. PPO strikes a balance between ease of implementation, sample complexity, and ease of tuning, trying to compute an update at each step that minimizes the cost function while ensuring the deviation from the previous policy is relatively small. Generally speaking, it is a clipper version A2C algorithm.
 
 <a id="es" />
 
 #### 4. 💡 `Evolution Strategy (ES)` 👨🏻‍💻
+
+
 
 <a id="ars" />
 
