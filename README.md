@@ -137,9 +137,31 @@ where each minor step approaching the task completeness will be rewarded, while 
 
 #
 
-<a id="quickstart" />
+- [🔬 Algorithms 💻](#algorithms)
+	* [💡 `Proximal policy optimization (PPO)` 👨🏻‍💻](#ppo)
+	* [💡 `Evolution Strategy (ES)` 👨🏻‍💻](#es)
+	* [💡 `Augmented Random Search (ARS)` 👨🏻‍💻](#ars)
+	* [💡 `Soft Actor-Critic (SAC)` 👨🏻‍💻](#sac)
 
-### 4. 🚀 Quickstart 💻
+<a id="algorithms" />
+
+### 4. 🔬 Algorithms 💻
+
+<a id="ppo" />
+
+#### 4. 💡 `Proximal policy optimization (PPO)` 👨🏻‍💻
+
+<a id="es" />
+
+#### 4. 💡 `Evolution Strategy (ES)` 👨🏻‍💻
+
+<a id="ars" />
+
+#### 4. 💡 `Augmented Random Search (ARS)` 👨🏻‍💻
+
+<a id="sac" />
+
+#### 4. 💡 `Soft Actor-Critic (SAC)` 👨🏻‍💻
 
 #
 
