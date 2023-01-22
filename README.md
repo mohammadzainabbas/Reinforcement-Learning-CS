@@ -144,8 +144,7 @@ where each minor step approaching the task completeness will be rewarded, while 
 Explore the project easily and quickly through the following _colab_ notebooks:
 
 - [`Grasp: Pick-and-place with a robotic hand`](https://colab.research.google.com/github/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/notebooks/demo.ipynb) - this demo notebook compares first three [algorithms](#algorithms) and train agents on `Grasp` environment by `Brax`. At the end, it also shows trained `PPO agent` interaction with the environment.
-
-- [`Step-by-step training with PPO`](https://colab.research.google.com/github/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/notebooks/demo_ppo_train.ipynb)
+- [`Step-by-step training with PPO`](https://colab.research.google.com/github/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/notebooks/demo_ppo_train.ipynb) - this notebook shows step-by-step training of `PPO agent` on `Grasp` environment by `Brax`.
 
 #
 
