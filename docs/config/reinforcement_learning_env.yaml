@@ -3,7 +3,7 @@ channels:
   - apple
   - conda-forge
 dependencies:
-  - python=3  ## specify desired version
+  - python=3.10  ## specify desired version
   - pip
   - tensorflow-deps
   - ipykernel  ## for use with Jupyter
