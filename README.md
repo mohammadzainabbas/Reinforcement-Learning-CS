@@ -213,7 +213,7 @@ mamba env create -n reinforcement_learning -f docs/config/reinforcement_learning
 conda activate reinforcement_learning
 ```
 
-Or you can run the `train_ppo.py` file locally by following the steps below:
+You can run the [`train_ppo.py`](https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/src/train_ppo.py) file locally by following the steps below:
 
 ```bash
 python src/train_ppo.py
