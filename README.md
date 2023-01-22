@@ -102,7 +102,7 @@ The action has `19` dimensions, it’s the hand’s position and the joints’ a
 
 The reward function goes like the following:
 
-
+where each minor step approaching the task completeness will be rewarded, while the `target_hit` will gain the biggest reward.
 
 #
 
