@@ -3,52 +3,6 @@ from typing import Union, Dict, Any
 from pathlib import Path
 from os.path import join
 
-def read_json(path: Union[str, Path]) -> Dict[str, Any]:
-	with open(path, "r") as f:
-		return loads(f.read())
-
-def main() -> None:
-
-	# Read the JSON files
-	results_dir = join(Path(__file__).resolve().parents[1], "docs", "results")
-	
-	initial_system = read_json(join(results_dir, "initial_system.json"))
-	sys_1K = read_json(join(results_dir, "sys_1K.json"))
-	sys_5M = read_json(join(results_dir, "sys_5M.json"))
-	sys_400M = read_json(join(results_dir, "sys_400M.json"))
-	final_600M = read_json(join(results_dir, "final_600M.json"))
-
-	# Write the HTML file
-	with open(join(results_dir, "index.html"), "w") as f:
-		f.write(_HTML.replace("<!-- initial_system -->", str(initial_system))
-							.replace("<!-- sys_1K -->", str(sys_1K))
-							.replace("<!-- sys_5M -->", str(sys_5M))
-							.replace("<!-- sys_400M -->", str(sys_400M))
-							.replace("<!-- final_600M -->", str(final_600M)))
-
-
-
-	# with open("results/initial_system.json", "r") as f:
-
-	# with open("results/sys_1K.json", "r") as f:
-	# 	sys_1K = loads(f.read())
-
-	# with open("results/sys_5M.json", "r") as f:
-	# 	sys_5M = loads(f.read())
-
-	# with open("results/sys_400M.json", "r") as f:
-	# 	sys_400M = loads(f.read())
-
-	# with open("results/final_600M.json", "r") as f:
-	# 	final_600M = loads(f.read())
-
-	# with open("results/index.html", "w") as f:
-	# 	f.write(_HTML.replace("<!-- initial_system -->", str(initial_system))
-	# 						.replace("<!-- sys_1K -->", str(sys_1K))
-	# 						.replace("<!-- sys_5M -->", str(sys_5M))
-	# 						.replace("<!-- sys_400M -->", str(sys_400M))
-	# 						.replace("<!-- final_600M -->", str(final_600M)))
-
 _HTML = """
 <html>
   <head>
@@ -114,6 +68,29 @@ _HTML = """
   </body>
 </html>
 """
+
+def read_json(path: Union[str, Path]) -> Dict[str, Any]:
+	with open(path, "r") as f:
+		return loads(f.read())
+
+def main() -> None:
+
+	# Read the JSON files
+	results_dir = join(Path(__file__).resolve().parents[1], "docs", "results")
+	
+	initial_system = read_json(join(results_dir, "initial_system.json"))
+	sys_1K = read_json(join(results_dir, "sys_1K.json"))
+	sys_5M = read_json(join(results_dir, "sys_5M.json"))
+	sys_400M = read_json(join(results_dir, "sys_400M.json"))
+	final_600M = read_json(join(results_dir, "final_600M.json"))
+
+	# Write the HTML file
+	with open(join(results_dir, "index.html"), "w") as f:
+		f.write(_HTML.replace("<!-- initial_system -->", str(initial_system))
+							.replace("<!-- sys_1K -->", str(sys_1K))
+							.replace("<!-- sys_5M -->", str(sys_5M))
+							.replace("<!-- sys_400M -->", str(sys_400M))
+							.replace("<!-- final_600M -->", str(final_600M)))
 
 if __name__ == "__main__":
 	main()
