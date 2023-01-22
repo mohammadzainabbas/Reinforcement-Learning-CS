@@ -78,11 +78,11 @@ def main() -> None:
 	results_dir = join(Path(__file__).resolve().parents[1], "results")
 	data_dir = join(results_dir, "data")
 	
-	initial_system = read_json(join(results_dir, "initial_system.json"))
-	sys_1K = read_json(join(results_dir, "sys_1K.json"))
-	sys_5M = read_json(join(results_dir, "sys_5M.json"))
-	sys_400M = read_json(join(results_dir, "sys_400M.json"))
-	final_600M = read_json(join(results_dir, "final_600M.json"))
+	initial_system = read_json(join(data_dir, "initial_system.json"))
+	sys_1K = read_json(join(data_dir, "sys_1K.json"))
+	sys_5M = read_json(join(data_dir, "sys_5M.json"))
+	sys_400M = read_json(join(data_dir, "sys_400M.json"))
+	final_600M = read_json(join(data_dir, "final_600M.json"))
 
 	# Write the HTML file
 	with open(join(results_dir, "index.html"), "w") as f:
