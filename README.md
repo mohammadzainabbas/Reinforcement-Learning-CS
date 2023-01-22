@@ -106,7 +106,7 @@ The reward function goes like the following:
 \text{reward} = \text{moving to object} + \text{close to object} + \text{touching object} + 5 * \text{target hit} + \text{moving to target}
 ```
 
-where:
+where,
 
 ```math
 \text{moving to object} : \text{small reward for moving towards the object.} \nonumber \\
