@@ -215,7 +215,7 @@ conda activate reinforcement_learning
 
 3. Run the code
 
-You can run the [`train_ppo.py`](https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/src/train_ppo.py) file locally by following the steps below:
+- [`train_ppo.py`](https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/src/train_ppo.py) - Train the agent using `PPO` algorithm:
 
 ```bash
 python src/train_ppo.py
