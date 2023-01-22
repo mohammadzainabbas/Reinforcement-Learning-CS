@@ -136,11 +136,9 @@ where each minor step approaching the task completeness will be rewarded, while 
 
 ### 4. 🚀 Quickstart 💻
 
-The following steps will help you get started with the project.
+Explore the project easily and quickly through the following _colab_ notebooks:
 
-- [x] [`📚 Requirements 📚`](#requirements)
-- [x] [📦 `Installation` 📦](#installation)
-- [x] [🏃‍♂️ `Running the demo` 🏃‍♂️](#running-demos)
+- 
 
 #
 
