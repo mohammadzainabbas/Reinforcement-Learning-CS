@@ -16,7 +16,7 @@ You can see the live demo [here](http://mohammadzainabbas.tech/Reinforcement-Lea
 	* [💡 `Evolution Strategy (ES)` 👨🏻‍💻](#es)
 	* [💡 `Augmented Random Search (ARS)` 👨🏻‍💻](#ars)
 	* [💡 `Soft Actor-Critic (SAC)` 👨🏻‍💻](#sac)
-- [🚀 Getting started 🖲️](#getting-started)
+- [🚀 Run locally 🖲️](#run-locally)
 
 #
 
