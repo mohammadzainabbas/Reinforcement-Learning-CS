@@ -100,6 +100,8 @@ The action has `19` dimensions, it’s the hand’s position and the joints’ a
 
 #### 2.3. 🏆 Reward 🥇
 
+The reward function goes like the following:
+
 
 
 #
