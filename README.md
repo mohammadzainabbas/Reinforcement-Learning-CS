@@ -165,6 +165,8 @@ We will use the brax’s optimized algorithms: `PPO`, `ES`, `ARS` and `SAC`.
 
 #### 4. 💡 `Augmented Random Search (ARS)` 👨🏻‍💻
 
+[`Augmented Random Search (ARS)`](https://arxiv.org/abs/1803.07055) is a random search method for training linear policies for continuous control problems. It operates directly on the policy weights, each epoch the agent perturbs its current policy N times, and collects 2N rollouts using the modified policies. The rewards from these rollouts are used to update the current policy weights, repeat until completion. The algorithm is known to have high variance; not all seeds obtain high rewards, but to our knowledge their work in many ways represents the state of the art on these benchmarks.
+
 <a id="sac" />
 
 #### 4. 💡 `Soft Actor-Critic (SAC)` 👨🏻‍💻
