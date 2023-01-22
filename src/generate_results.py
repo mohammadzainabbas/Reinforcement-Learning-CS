@@ -8,16 +8,17 @@ def read_json(path: Union[str, Path]) -> Dict[str, Any]:
 		return loads(f.read())
 
 def main() -> None:
-	# Read the JSON files
 
+	# Read the JSON files
 	results_dir = join(Path(__file__).resolve().parents[1], "docs", "results")
+	
 	initial_system = read_json(join(results_dir, "initial_system.json"))
 	sys_1K = read_json(join(results_dir, "sys_1K.json"))
 	sys_5M = read_json(join(results_dir, "sys_5M.json"))
 	sys_400M = read_json(join(results_dir, "sys_400M.json"))
 	final_600M = read_json(join(results_dir, "final_600M.json"))
 
-	
+
 
 	# with open("results/initial_system.json", "r") as f:
 
