@@ -235,6 +235,9 @@ python src/train_sac.py
 
 you will get the same output files as `PPO` algorithm.
 
-[`train_sac.py`](https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/src/train_sac.py) - train the reinforcement learning agent using `SAC` algorithm:
+[`generate_results.py`](https://github.com/mohammadzainabbas/Reinforcement-Learning-CS/blob/main/src/generate_results.py) - generate the results of the trained agents.
 
+```bash
+python src/generate_results.py
+```
 #
