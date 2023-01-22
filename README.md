@@ -12,6 +12,7 @@
 	* [🔭 `Proximal policy optimization (PPO)` 🔍](#ppo)
 	* [🔭 `Evolution Strategy (ES)` 🔍](#es)
 	* [🔭 `Augmented Random Search (ARS)` 🔍](#ars)
+	* [🔭 `Soft Actor-Critic (SAC)` 🔍](#sac)
 - [🚀 Quickstart 💻](#quickstart)
 	* [📝 Prerequisites ⚙️](#prerequisites)
 	* [🔨 Installation 🔧](#installation)
