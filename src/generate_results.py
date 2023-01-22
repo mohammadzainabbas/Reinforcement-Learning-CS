@@ -92,7 +92,7 @@ def main() -> None:
 	final_600M = read_json(join(data_dir, "final_600M.json"))
 
 	# Write the HTML file
-	with open(join(results_dir, "index1.html"), "w") as f:
+	with open(join(results_dir, "index.html"), "w") as f:
 		f.write(_HTML.replace("<!-- initial_system -->", str(initial_system))
 							.replace("<!-- sys_1K -->", str(sys_1K))
 							.replace("<!-- sys_5M -->", str(sys_5M))
