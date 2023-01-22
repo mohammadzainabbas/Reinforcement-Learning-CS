@@ -159,13 +159,13 @@ We will use the brax’s optimized algorithms: `PPO`, `ES`, `ARS` and `SAC`.
 
 #### 4.2. 💡 Evolution Strategy (ES) 👨🏻‍💻
 
-[`Evolution Strategy (ES)`](https://arxiv.org/abs/1707.06347) is Inspired by natural evolution, it is a powerful black-box optimization technique. A group of random noise is tested for the network parameters, and the highest scoring parameter vectors are chosen to evolute the network. It is a different method compared with using the loss function to back propagate the network. ES can be parallelized using XLA backend (`CPU`/`GPU`/`TPU`) to speed up the training.
+[`Evolution Strategy (ES)`](https://arxiv.org/abs/1707.06347) is inspired by natural evolution, it is a powerful black-box optimization technique. A group of random noise is tested for the network parameters, and the highest scoring parameter vectors are chosen to evolute the network. It is a different method compared with using the loss function to back propagate the network. `ES` can be parallelized using XLA backend (`CPU`/`GPU`/`TPU`) to speed up the training.
 
 <a id="ars" />
 
 #### 4.3. 💡 Augmented Random Search (ARS) 👨🏻‍💻
 
-[`Augmented Random Search (ARS)`](https://arxiv.org/abs/1803.07055) is a random search method for training linear policies for continuous control problems. It operates directly on the policy weights, each epoch the agent perturbs its current policy N times, and collects 2N rollouts using the modified policies. The rewards from these rollouts are used to update the current policy weights, repeat until completion. The algorithm is known to have high variance; not all seeds obtain high rewards, but to our knowledge their work in many ways represents the state of the art on these benchmarks.
+[`Augmented Random Search (ARS)`](https://arxiv.org/abs/1803.07055) is a random search method for training linear policies for continuous control problems. It operates directly on the policy weights, each epoch the agent perturbs its current policy `N` times, and collects `2N` rollouts using the modified policies. The rewards from these rollouts are used to update the current policy weights, repeat until completion. The algorithm is known to have high variance; not all seeds obtain high rewards, but to our knowledge their work in many ways represents the state of the art on these benchmarks.
 
 <a id="sac" />
 
