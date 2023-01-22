@@ -147,6 +147,12 @@ Explore the project easily and quickly through the following _colab_ notebooks:
 
 ### 4. 🚀 Getting started 🖲️
 
+#
+
+<a id="getting-started" />
+
+### 4. 🚀 Getting started 🖲️
+
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 #
