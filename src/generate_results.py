@@ -22,7 +22,7 @@ _HTML = """
         margin: 0;
         padding: 0;
         height: 50vh;
-		    padding-bottom: 2.5%;
+        padding-bottom: 2.5%;
       }
     </style>
   </head>
