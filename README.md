@@ -159,7 +159,7 @@ We will use the brax’s optimized algorithms: `PPO`, `ES`, `ARS` and `SAC`.
 
 #### 4. 💡 `Evolution Strategy (ES)` 👨🏻‍💻
 
-
+Evolution Strategy (ES) is Inspired by natural evolution, it is a powerful black-box optimization technique. A group of random noise is tested for the network parameters, and the highest scoring parameter vectors are chosen to evolute the network. It is a different method compared with using the loss function to back propagate the network. ES can be parallelized using XLA backend (`CPU`/`GPU`/`TPU`) to speed up the training.
 
 <a id="ars" />
 
