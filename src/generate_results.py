@@ -18,6 +18,14 @@ def main() -> None:
 	sys_400M = read_json(join(results_dir, "sys_400M.json"))
 	final_600M = read_json(join(results_dir, "final_600M.json"))
 
+	# Write the HTML file
+	with open(join(results_dir, "index.html"), "w") as f:
+		f.write(_HTML.replace("<!-- initial_system -->", str(initial_system))
+							.replace("<!-- sys_1K -->", str(sys_1K))
+							.replace("<!-- sys_5M -->", str(sys_5M))
+							.replace("<!-- sys_400M -->", str(sys_400M))
+							.replace("<!-- final_600M -->", str(final_600M)))
+
 
 
 	# with open("results/initial_system.json", "r") as f:
