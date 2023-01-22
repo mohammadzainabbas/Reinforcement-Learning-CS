@@ -8,7 +8,7 @@
 	* [🔭 Obs 🔍](#physics-simulation-engines)
 	* [🏄‍♂️ ac 🤸‍♂️](#physics-simulation-engines)
 	* [🏆 rw 🥇](#physics-simulation-engines)
-- [🚀 Getting started 🚀](#getting-started)
+- [🚀 Getting started 🖲️](#getting-started)
 	* [⚙️ Prerequisites ⚙️](#prerequisites)
 	* [🔧 Installation 🔧](#installation)
 	* [🏃‍♂️ Running Demo(s) 🏃‍♂️](#running-demos)
