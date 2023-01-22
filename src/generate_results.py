@@ -77,7 +77,8 @@ _HTML = """
 </html>
 """
 
-def read_json(path: Union[str, Path]) -> Dict[str, Any]:
+# def read_json(path: Union[str, Path]) -> Dict[str, Any]:
+def read_json(path: Union[str, Path]) -> str:
 	with open(path, "r") as f:
 		return f.read()
 
