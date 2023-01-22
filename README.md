@@ -206,26 +206,7 @@ Explore the project easily and quickly through the following _colab_ notebooks:
 
 ### 6. 🚀 Getting started 🖲️
 
-
-
-#
-
-
-<a id="prerequisites" />
-
-#### 2.1. ⚙️ Prerequisites ⚙️
-
-- [x] Python 3.7 or higher
-- [x] Brax 0.1.0 or higher
-- [x] Jax 0.4.1 or higher
-- [x] Flax 0.6.3 or higher
-- [x] PyTorch 1.13.1 or higher
-
-#
-
-<a id="installation" />
-
-#### 2.2. 🔧 Installation 🔧
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 1. Clone the repository
 
