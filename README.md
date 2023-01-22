@@ -35,7 +35,6 @@ Reinforcement learning is a powerful tool for training robots to perform complex
 
 #
 
-
 <a id="physics-simulation-engines" />
 
 ### 2. 🌊 Physics Simulation Engines 🦿
