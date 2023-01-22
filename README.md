@@ -9,7 +9,6 @@
 	* [🏄‍♂️ `Actions` 🤸‍♂️](#actions)
 	* [🏆 `Reward` 🥇](#reward)
 - [🚀 Quickstart 💻](#quickstart)
-- [🚀 Getting started 🖲️](#getting-started)
 	* [📝 Prerequisites ⚙️](#prerequisites)
 	* [🔨 Installation 🔧](#installation)
 	* [🏃‍♂️ Running Demo(s) 🏃‍♂️](#running-demos)
