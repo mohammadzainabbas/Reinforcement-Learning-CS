@@ -5,7 +5,7 @@
 - [👨🏻‍💻 Introduction 👨🏻‍💻](#introduction)
 - [🌊 Physics Simulation Engines 🦿](#physics-simulation-engines)
 - [🌪 Environment 🦾](#environment)
-	* [🔭 Obs 🔍](#physics-simulation-engines)
+	* [🔭 Observations 🔍](#observations)
 	* [🏄‍♂️ ac 🤸‍♂️](#physics-simulation-engines)
 	* [🏆 rw 🥇](#physics-simulation-engines)
 - [🚀 Getting started 🖲️](#getting-started)
