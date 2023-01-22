@@ -6,7 +6,7 @@
 	* [🚨 Physics Simulation Engines 🦿](#physics-simulation-engines)
 	* [🧳🦾 Env 🦿](#physics-simulation-engines)
 	* [🔭 Obs 🔍](#physics-simulation-engines)
-	* [🔭 ac 🔬](#physics-simulation-engines)
+	* [🏄‍♂️ ac 🤸‍♂️](#physics-simulation-engines)
 	* [🔭 rw 🔬](#physics-simulation-engines)
 - [🚀 Getting started 🚀](#getting-started)
 	* [⚙️ Prerequisites ⚙️](#prerequisites)
