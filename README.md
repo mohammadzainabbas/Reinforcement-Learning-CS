@@ -149,7 +149,7 @@ where,
 \text{moving to target} : \text{high reward for moving towards the target.} \nonumber
 ```
 
-where each minor step approaching the task completeness will be rewarded, while the $\text{target hit}$ will gain the biggest reward.
+> each minor step approaching the task completeness will be rewarded, while the $\text{target hit}$ will gain the biggest reward.
 
 #
 
